@@ -107,5 +107,11 @@
   <ItemGroup>
     <Resource Include="Images\icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Environment\Environment.csproj">
+      <Project>{73a22a67-d989-4c49-b109-ee1cc7917094}</Project>
+      <Name>Environment</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

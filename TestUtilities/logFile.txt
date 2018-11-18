@@ -1,0 +1,34 @@
+
+                                      CodeAnalysis - Version 1.4
+    ==============================================================================================
+     Thu Jun  8 16:36:39 2017
+     Path: "C:\Users\jimfa\Desktop\PluggableRepo\TestUtilities"
+     Args: *.h, *.cpp, *.cs, /m, /r, /f
+                                                                               
+           Code Metrics - Start Line, Size (lines/code), and Complexity (number of scopes)
+    ==============================================================================================
+
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+                             namespace                   Global Namespace       1       1      17
+
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+          TestUtilities.cs   namespace                PluggableRepository      29      94      16
+          TestUtilities.cs       class                      TestUtilities      31      92      15
+          TestUtilities.cs    function                        checkResult      35       8       1
+          TestUtilities.cs    function                          checkNull      46      10       2
+          TestUtilities.cs    function                       handleInvoke      65      16       4
+          TestUtilities.cs    function                              title      84       4       1
+          TestUtilities.cs    function                            putLine      91       9       2
+          TestUtilities.cs    function                               Main     106      15       4
+
+                          Functions Exceeding Metric Limits and Public Data
+    ==============================================================================================
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+
+
+
+    searched     8 dirs
+   processed     5 files

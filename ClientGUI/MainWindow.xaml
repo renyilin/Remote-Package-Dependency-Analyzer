@@ -85,7 +85,7 @@
                                 </StackPanel>
                             </Button>
                         </Grid>
-                    <TreeView Name ="folderTree" SelectedItemChanged="FolderTree_SelectedItemChanged" ItemsSource="{Binding Folders}" Margin="10,5,10,0" Height="260" VerticalAlignment="Stretch">
+                    <TreeView Name ="folderTree" SelectedItemChanged="FolderTree_SelectedItemChanged" MouseDoubleClick="FolderTree_MouseDoubleClick" ItemsSource="{Binding FFcollection}" Margin="10,5,10,0" Height="260" VerticalAlignment="Stretch">
                     </TreeView>
                     <TextBlock  Text="Selected Directory for Analysis:"  VerticalAlignment ="Center" Margin="10,10,0,0" />
                     <TextBox Name="tbkPath" Grid.Column="0" Text="C:\" IsEnabled="False" Padding="5" VerticalAlignment ="Center" Margin="10,5,10,0" Background="#eee" />
