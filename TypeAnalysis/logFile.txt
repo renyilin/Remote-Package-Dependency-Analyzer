@@ -1,0 +1,42 @@
+
+                                      CodeAnalysis - Version 1.8
+    ==============================================================================================
+     Wed Oct 31 22:24:30 2018
+     Path: "Z:\Documents\Course\CES681\MyHomework\Project3\PkgDpdAnalysis\TypeAnalysis"
+     Args: IRuleandAction.cs, /v, /m, /r, /f, /p
+                                                                               
+           Code Metrics - Start Line, Size (lines/code), and Complexity (number of scopes)
+    ==============================================================================================
+
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+                             namespace                   Global Namespace       1       1      17
+
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+         IRuleandAction.cs   namespace                        DepAnalysis      42      91      16
+         IRuleandAction.cs   interface                            IAction      47       3       1
+         IRuleandAction.cs       class                            AAction      54      29       8
+              public data: static public Action < string > actionDelegate ; 
+         IRuleandAction.cs    function                            display      76       5       1
+         IRuleandAction.cs   interface                              IRule      86       4       1
+         IRuleandAction.cs       class                              ARule      94      39       5
+              public data: static public Action < string > actionDelegate ; 
+         IRuleandAction.cs    function                              ARule      99       3       1
+         IRuleandAction.cs    function                                add     103       3       1
+         IRuleandAction.cs    function                          doActions     108       4       1
+         IRuleandAction.cs    function                        indexOfType     113      18       1
+
+                          Functions Exceeding Metric Limits and Public Data
+    ==============================================================================================
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+
+              public data: IRuleandAction.cs : 60 - class AAction
+                static public Action < string > actionDelegate ; 
+              public data: IRuleandAction.cs : 96 - class ARule
+                static public Action < string > actionDelegate ; 
+
+
+    searched     9 dirs
+   processed     1 files

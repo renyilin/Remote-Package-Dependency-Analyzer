@@ -1,0 +1,23 @@
+using System;
+using Lexer;
+
+namespace nsPkgC
+{
+	public class Animal : nsPkgA.ClassA
+	{
+	    nsPkgB.ClassA classA = new nsPkgB.ClassA();
+	}
+	
+	public interface ICanFly
+	{
+		
+	}
+    
+    namespace nsCA
+    {
+        public class Forest
+        {
+        
+        }
+    }
+}

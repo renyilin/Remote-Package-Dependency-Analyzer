@@ -1,0 +1,37 @@
+namespace nsA
+{
+	class classA : classB
+	{
+		
+	}
+	
+	public enum CarOptions
+	{
+    // The flag for SunRoof is 0001.
+    SunRoof = 0x01,
+    // The flag for Spoiler is 0010.
+    Spoiler = 0x02,
+    // The flag for FogLights is 0100.
+    FogLights = 0x04,
+    // The flag for TintedWindows is 1000.
+    TintedWindows = 0x08,
+	}
+	
+    namespace nsB
+    {
+        public struct Book  
+        {  
+        public decimal price;  
+        public string title;  
+        public string author;  
+        } 
+    }
+	
+	public delegate void TestDelegateA(string message);
+	public delegate int TestDelegateB(MyType m, long num);
+	
+	interface ISampleInterface
+	{
+    void SampleMethod();
+	}
+}

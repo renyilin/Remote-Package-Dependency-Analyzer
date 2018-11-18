@@ -1,0 +1,46 @@
+
+                                      CodeAnalysis - Version 1.8
+    ==============================================================================================
+     Wed Oct 31 21:33:17 2018
+     Path: "Z:\Documents\Course\CES681\MyHomework\Project3\PkgDpdAnalysis\Display"
+     Args: Display.cs, /v, /m, /r, /f, /p
+                                                                               
+           Code Metrics - Start Line, Size (lines/code), and Complexity (number of scopes)
+    ==============================================================================================
+
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+                             namespace                   Global Namespace       1       1      48
+
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+                Display.cs   namespace                        DepAnalysis      53     271      47
+                Display.cs       class                          StringExt      61       8       2
+                Display.cs    function                           Truncate      63       4       1
+                Display.cs       class                            Display      70     254      44
+                Display.cs    function                            Display      72      12       1
+                Display.cs    function                   showMetricsTable      97      23       2
+                Display.cs    function                          showScope     122      11       2
+                Display.cs    function                          showAlias     136       9       2
+                Display.cs    function                      showTypeTable     149      27       3
+                Display.cs    function                     showAliasTable     179      24       3
+                Display.cs    function                     showDependency     207      20       5
+                Display.cs    function               showStrongComponents     230      16       3
+                Display.cs    function                  displaySemiString     251      11       2
+                Display.cs    function                      displayString     265       7       1
+                Display.cs    function                      displayString     275       4       1
+                Display.cs    function                       displayRules     282       6       2
+                Display.cs    function                     displayActions     291       6       2
+                Display.cs    function                       displayFiles     300       6       2
+                Display.cs    function                   displayDirectory     309       6       2
+                Display.cs    function                               Main     318       3       1
+
+                          Functions Exceeding Metric Limits and Public Data
+    ==============================================================================================
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+
+
+
+    searched     7 dirs
+   processed     1 files

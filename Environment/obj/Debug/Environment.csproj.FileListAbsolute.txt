@@ -1,0 +1,6 @@
+\\vmware-host\Shared Folders\Documents\Course\CES681\Demo\NavigatorClientServer\Environment\bin\Debug\Environment.dll
+\\vmware-host\Shared Folders\Documents\Course\CES681\Demo\NavigatorClientServer\Environment\bin\Debug\Environment.pdb
+\\vmware-host\Shared Folders\Documents\Course\CES681\Demo\NavigatorClientServer\Environment\obj\Debug\Environment.csprojAssemblyReference.cache
+\\vmware-host\Shared Folders\Documents\Course\CES681\Demo\NavigatorClientServer\Environment\obj\Debug\Environment.csproj.CoreCompileInputs.cache
+\\vmware-host\Shared Folders\Documents\Course\CES681\Demo\NavigatorClientServer\Environment\obj\Debug\Environment.dll
+\\vmware-host\Shared Folders\Documents\Course\CES681\Demo\NavigatorClientServer\Environment\obj\Debug\Environment.pdb

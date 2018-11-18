@@ -1,0 +1,142 @@
+﻿<!-- 
+    /////////////////////////////////////////////////////////////////////////
+    // NavigatorClient.xaml - Demonstrates Directory Navigation in WPF App //
+    // ver 2.0                                                             //
+    // Jim Fawcett, CSE681 - Software Modeling and Analysis, Fall 2017     //
+    /////////////////////////////////////////////////////////////////////////
+    -->
+
+<Window x:Class="ClientGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClientGUI"
+        mc:Ignorable="d"
+        Title="  Remote Dependency Analyzer" Icon="Images/icon.png" ResizeMode="NoResize" Height="540" Width="500">
+
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontWeight" Value="Medium" />
+            <Setter Property="FontSize" Value="14" />
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontWeight" Value="Medium"  />
+            <Setter Property="FontSize" Value="14" />
+        </Style>
+        <Style TargetType="{x:Type TabItem}">
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontWeight" Value="Medium"  />
+            <Setter Property="FontSize" Value="15" />
+        </Style>
+        <Style TargetType="{x:Type CheckBox}">
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontWeight" Value="Medium"  />
+            <Setter Property="FontSize" Value="14" />
+        </Style>
+        <Style TargetType="{x:Type GroupBox}">
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="FontSize" Value="14" />
+        </Style>
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontWeight" Value="Medium" />
+            <Setter Property="FontSize" Value="14" />
+        </Style>
+    </Window.Resources>
+    <DockPanel>
+        <StatusBar DockPanel.Dock="Bottom" Height="26">
+            <TextBlock Text="1234"></TextBlock>
+        </StatusBar>
+        <Border Padding="5" Background="#eee" BorderThickness="0 4 0 0" BorderBrush="RoyalBlue">
+        <TabControl>
+            <!-- TabItem1: Execution -->
+            <TabItem Name="TabExecution" Header="Execution" FontWeight="Bold" Padding="30,1,30,1">
+                <StackPanel>
+                    <StackPanel.Resources>
+                        <HierarchicalDataTemplate ItemsSource="{Binding Children}" DataType="{x:Type local:Folder}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="Images/folder-closed.png" Width="20" Margin="2"/>
+                                <TextBlock Margin="5,0,0,0" Text="{Binding FLabel}" VerticalAlignment="Center"  FontWeight="SemiBold" FontSize="13" />
+                            </StackPanel>
+                        </HierarchicalDataTemplate>
+                        <HierarchicalDataTemplate ItemsSource="{Binding Children}" DataType="{x:Type local:File}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="Images/file.png" Width="20" Margin="2" Opacity ="0.7" />
+                                <TextBlock Margin="5,0,0,0" Text="{Binding FLabel}" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="13"  />
+                            </StackPanel>
+                        </HierarchicalDataTemplate>
+                    </StackPanel.Resources>
+                        <Grid  Margin="10,15,10,0" Height="25">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1.2*"/>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="0.8*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="Remote Repository:" HorizontalAlignment="left" VerticalAlignment ="Bottom" Grid.ColumnSpan="2" Margin="0,0,0,3" Width="180"/>
+                            <!--<Button Grid.Column="2" Content="Select Directory" HorizontalAlignment="center" Padding="10,0,10,0"></Button>-->
+                            <Button Grid.Column="3" HorizontalAlignment="Right" Background='AliceBlue'>
+                                <StackPanel>
+                                    <Image Source="Images/refresh.png" Width="18" Margin="2" />
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                    <TreeView Name ="folderTree" SelectedItemChanged="FolderTree_SelectedItemChanged" ItemsSource="{Binding Folders}" Margin="10,5,10,0" Height="260" VerticalAlignment="Stretch">
+                    </TreeView>
+                    <TextBlock  Text="Selected Directory for Analysis:"  VerticalAlignment ="Center" Margin="10,10,0,0" />
+                    <TextBox Name="tbkPath" Grid.Column="0" Text="C:\" IsEnabled="False" Padding="5" VerticalAlignment ="Center" Margin="10,5,10,0" Background="#eee" />
+                    <Button Name="btnExecute" Content="Dependency Analyze" Margin="10,18,10,0" Padding="6" Background='AliceBlue' ></Button>
+                </StackPanel>
+            </TabItem>
+
+            <!-- TabItem2: Options -->
+            <TabItem Name="TabOptions" Header="Options" FontWeight="Bold" Padding="30,1,30,1">
+                <StackPanel Margin="10,10,10,10">
+                        <GroupBox Header="Server Address" Height="110">
+                            <Grid  Margin="10,10,10,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0">
+                                    <TextBlock  Text="IP Address:"  VerticalAlignment ="Center" />
+                                    <TextBox Text="localhost" Padding="5" VerticalAlignment ="Center" Margin="0,5,10,0" />
+                                </StackPanel>
+                                <StackPanel Grid.Column="1">
+                                    <TextBlock  Text="Port:"  VerticalAlignment ="Center" />
+                                    <TextBox Text="8080" Padding="5" VerticalAlignment ="Center" Margin="0,5,0,0" />
+                                </StackPanel>
+                            </Grid>
+                        </GroupBox>
+                        <GroupBox Header="Dependency Analysis Options" Height="80" Margin="0,10,0,0">
+                            <Grid  Margin="10,10,10,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0">
+                                    <CheckBox Content="Dependency Analysis" Margin="0,5,0,0"></CheckBox>
+                                </StackPanel>
+                                <StackPanel Grid.Column="1">
+                                    <CheckBox Content="Strong Componets Analysis" Margin="0,5,0,0"></CheckBox>
+                                </StackPanel>
+                            </Grid>
+                        </GroupBox>
+                        <GroupBox Header="Result Output" Height="140" Margin="0,10,0,0">
+                            <StackPanel Margin="10,10,10,0">
+                                <TextBlock  Text="Output Path:"  VerticalAlignment ="Center" />
+                                <TextBox Text="C:\" Padding="5" VerticalAlignment ="Center" Margin="0,5,0,0" />
+                                <Button Name="btnBrowse" Content="Browse" Margin="10,10,0,0" Padding="4" Background='AliceBlue' Width="70" HorizontalAlignment="Right" ></Button>
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+            </TabItem>
+        </TabControl>
+    </Border>
+    </DockPanel>
+
+</Window>

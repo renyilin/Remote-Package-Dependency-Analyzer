@@ -1,0 +1,5 @@
+bin\Debug\Navigate.exe
+bin\Debug\Navigate.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\Navigate.exe
+obj\Debug\Navigate.pdb

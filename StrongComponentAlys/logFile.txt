@@ -1,0 +1,40 @@
+
+                                      CodeAnalysis - Version 1.8
+    ==============================================================================================
+     Wed Oct 31 22:13:03 2018
+     Path: "Z:\Documents\Course\CES681\MyHomework\Project3\PkgDpdAnalysis\StrongComponentAlys"
+     Args: StrongComponent.cs, /v, /m, /r, /f, /p
+                                                                               
+           Code Metrics - Start Line, Size (lines/code), and Complexity (number of scopes)
+    ==============================================================================================
+
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+                             namespace                   Global Namespace       1       1      24
+
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+        StrongComponent.cs   namespace                        DepAnalysis      35     132      23
+        StrongComponent.cs       class                    TarjanSccSolver      40     127      22
+        StrongComponent.cs    function                        DetectCycle      47      14       3
+        StrongComponent.cs    function                      strongconnect      63      32       6
+        StrongComponent.cs    function                showStrongComponent      98      16       3
+        StrongComponent.cs    function                               Main     117      46       9
+        StrongComponent.cs    function                             Vertex     134       1       1
+        StrongComponent.cs    function                             Vertex     135       1       1
+        StrongComponent.cs    function                             Vertex     136       1       1
+        StrongComponent.cs    function                             Vertex     137       1       1
+        StrongComponent.cs    function                             Vertex     138       1       1
+        StrongComponent.cs    function                             Vertex     139       1       1
+        StrongComponent.cs    function                             Vertex     140       1       1
+        StrongComponent.cs    function                             Vertex     141       1       1
+
+                          Functions Exceeding Metric Limits and Public Data
+    ==============================================================================================
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+
+
+
+    searched     8 dirs
+   processed     1 files

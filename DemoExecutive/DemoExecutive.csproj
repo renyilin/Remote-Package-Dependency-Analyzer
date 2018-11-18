@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{62FB6312-B271-4EA4-AF6F-80F3404EDACC}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>DemoExecutive</RootNamespace>
+    <AssemblyName>DemoExecutive</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Tester.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReqsTests.cs" />
+    <Compile Include="Test\PkgA.cs" />
+    <Compile Include="Test\PkgB.cs" />
+    <Compile Include="Test\PkgC.cs" />
+    <Compile Include="SpecialTestCases\TC1.cs" />
+    <Compile Include="SpecialTestCases\TC2.cs" />
+    <Compile Include="SpecialTestCases\Interface1.cs" />
+    <Compile Include="SpecialTestCases\Interface2.cs" />
+    <Compile Include="SpecialTestCases\TC3.cs" />
+    <Compile Include="Test\SubFolder\EmptyClass.cs" />
+    <Compile Include="SpecialTestCases\TC4.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Display\Display.csproj">
+      <Project>{7f6aee33-e7e5-4b83-b505-8be313defeb2}</Project>
+      <Name>Display</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SemiExp\SemiExp.csproj">
+      <Project>{8cd2f63b-9294-43bb-9f60-4fa966ebc48c}</Project>
+      <Name>SemiExp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repository\Repository.csproj">
+      <Project>{8DDF118E-6886-4C90-B92E-C8486D4F7F46}</Project>
+      <Name>Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StrongComponentAlys\StrongComponentAlys.csproj">
+      <Project>{D88AE52D-5CB0-4E93-B7D5-EBF7070BFDC8}</Project>
+      <Name>StrongComponentAlys</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TypeAnalysis\TypeAnalysis.csproj">
+      <Project>{AEAB7623-6F4A-47BF-985B-50BEF3F18328}</Project>
+      <Name>TypeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DepAnalysis\DepAnalysis.csproj">
+      <Project>{CFE6072A-9A6B-4142-B90E-AEC658BD000D}</Project>
+      <Name>DepAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TypeTable\TypeTable.csproj">
+      <Project>{1DBE18A3-2B85-4465-8C99-C6101FC9979A}</Project>
+      <Name>TypeTable</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Graph\Graph.csproj">
+      <Project>{35DCA3DD-DCEB-4B1D-9121-DBCAC08104A4}</Project>
+      <Name>Graph</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestHarness\TestHarness.csproj">
+      <Project>{36CDE84A-9781-4279-981F-C4F91C2E78D6}</Project>
+      <Name>TestHarness</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FileMgr\FileMgr.csproj">
+      <Project>{5F6E83AA-9D11-44D0-BA97-206619985C01}</Project>
+      <Name>FileMgr</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Test\" />
+    <Folder Include="SpecialTestCases\" />
+    <Folder Include="Test\SubFolder\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

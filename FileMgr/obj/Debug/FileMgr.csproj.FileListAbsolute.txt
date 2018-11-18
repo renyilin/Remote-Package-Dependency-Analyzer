@@ -1,0 +1,21 @@
+/Users/ryl/Documents/Course/CES681/Demo/Project2_Demo/FileMgr/bin/Debug/Navigate.dll
+/Users/ryl/Documents/Course/CES681/Demo/Project2_Demo/FileMgr/bin/Debug/Navigate.pdb
+/Users/ryl/Documents/Course/CES681/Demo/Project2_Demo/FileMgr/obj/Debug/FileMgr.csproj.CoreCompileInputs.cache
+/Users/ryl/Documents/Course/CES681/Demo/Project2_Demo/FileMgr/obj/Debug/Navigate.dll
+/Users/ryl/Documents/Course/CES681/Demo/Project2_Demo/FileMgr/obj/Debug/Navigate.pdb
+/Users/ryl/Documents/Course/CES681/MyHomework/Project3/PkgDpdAnalysis/FileMgr/bin/Debug/Navigate.dll
+/Users/ryl/Documents/Course/CES681/MyHomework/Project3/PkgDpdAnalysis/FileMgr/bin/Debug/Navigate.pdb
+/Users/ryl/Documents/Course/CES681/MyHomework/Project3/PkgDpdAnalysis/FileMgr/obj/Debug/FileMgr.csprojAssemblyReference.cache
+/Users/ryl/Documents/Course/CES681/MyHomework/Project3/PkgDpdAnalysis/FileMgr/obj/Debug/FileMgr.csproj.CoreCompileInputs.cache
+/Users/ryl/Documents/Course/CES681/MyHomework/Project3/PkgDpdAnalysis/FileMgr/obj/Debug/Navigate.dll
+/Users/ryl/Documents/Course/CES681/MyHomework/Project3/PkgDpdAnalysis/FileMgr/obj/Debug/Navigate.pdb
+Z:\Documents\Course\CES681\MyHomework\Project3\PkgDpdAnalysis\FileMgr\bin\Debug\Navigate.dll
+Z:\Documents\Course\CES681\MyHomework\Project3\PkgDpdAnalysis\FileMgr\bin\Debug\Navigate.pdb
+Z:\Documents\Course\CES681\MyHomework\Project3\PkgDpdAnalysis\FileMgr\obj\Debug\FileMgr.csproj.CoreCompileInputs.cache
+Z:\Documents\Course\CES681\MyHomework\Project3\PkgDpdAnalysis\FileMgr\obj\Debug\Navigate.dll
+Z:\Documents\Course\CES681\MyHomework\Project3\PkgDpdAnalysis\FileMgr\obj\Debug\Navigate.pdb
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\FileMgr\bin\Debug\Navigate.dll
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\FileMgr\bin\Debug\Navigate.pdb
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\FileMgr\obj\Debug\FileMgr.csproj.CoreCompileInputs.cache
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\FileMgr\obj\Debug\Navigate.dll
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\FileMgr\obj\Debug\Navigate.pdb

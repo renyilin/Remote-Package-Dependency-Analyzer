@@ -1,0 +1,16 @@
+Z:\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\ClientGUI\ClientGUI\obj\Release\ClientGUI.csprojAssemblyReference.cache
+Z:\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\ClientGUI\ClientGUI\obj\Release\MainWindow.g.cs
+Z:\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\ClientGUI\ClientGUI\obj\Release\App.g.cs
+Z:\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\ClientGUI\ClientGUI\obj\Release\GeneratedInternalTypeHelper.g.cs
+Z:\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\ClientGUI\ClientGUI\obj\Release\ClientGUI_MarkupCompile.cache
+Z:\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\ClientGUI\ClientGUI\obj\Release\ClientGUI_MarkupCompile.lref
+Z:\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\ClientGUI\ClientGUI\bin\Release\ClientGUI.exe.config
+Z:\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\ClientGUI\ClientGUI\bin\Release\ClientGUI.exe
+Z:\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\ClientGUI\ClientGUI\bin\Release\ClientGUI.pdb
+Z:\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\ClientGUI\ClientGUI\obj\Release\MainWindow.baml
+Z:\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\ClientGUI\ClientGUI\obj\Release\ClientGUI.g.resources
+Z:\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\ClientGUI\ClientGUI\obj\Release\ClientGUI.Properties.Resources.resources
+Z:\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\ClientGUI\ClientGUI\obj\Release\ClientGUI.csproj.GenerateResource.cache
+Z:\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\ClientGUI\ClientGUI\obj\Release\ClientGUI.csproj.CoreCompileInputs.cache
+Z:\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\ClientGUI\ClientGUI\obj\Release\ClientGUI.exe
+Z:\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\ClientGUI\ClientGUI\obj\Release\ClientGUI.pdb

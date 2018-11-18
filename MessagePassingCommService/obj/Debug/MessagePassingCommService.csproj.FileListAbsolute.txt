@@ -1,0 +1,29 @@
+C:\su\CSE681\code\Project3HelpF2017\PluggableComm\PluggableCommService\bin\Debug\PluggableCommService.exe.config
+C:\su\CSE681\code\Project3HelpF2017\PluggableComm\PluggableCommService\bin\Debug\PluggableCommService.exe
+C:\su\CSE681\code\Project3HelpF2017\PluggableComm\PluggableCommService\bin\Debug\PluggableCommService.pdb
+C:\su\CSE681\code\Project3HelpF2017\PluggableComm\PluggableCommService\bin\Debug\IService.dll
+C:\su\CSE681\code\Project3HelpF2017\PluggableComm\PluggableCommService\bin\Debug\TestUtilities.exe
+C:\su\CSE681\code\Project3HelpF2017\PluggableComm\PluggableCommService\bin\Debug\IService.pdb
+C:\su\CSE681\code\Project3HelpF2017\PluggableComm\PluggableCommService\bin\Debug\IService.dll.config
+C:\su\CSE681\code\Project3HelpF2017\PluggableComm\PluggableCommService\bin\Debug\TestUtilities.pdb
+C:\su\CSE681\code\Project3HelpF2017\PluggableComm\PluggableCommService\bin\Debug\TestUtilities.exe.config
+C:\su\CSE681\code\Project3HelpF2017\PluggableComm\PluggableCommService\obj\Debug\MessagePassingCommService.csprojResolveAssemblyReference.cache
+C:\su\CSE681\code\Project3HelpF2017\PluggableComm\PluggableCommService\obj\Debug\MessagePassingCommService.csproj.CoreCompileInputs.cache
+C:\su\CSE681\code\Project3HelpF2017\PluggableComm\PluggableCommService\obj\Debug\PluggableCommService.exe
+C:\su\CSE681\code\Project3HelpF2017\PluggableComm\PluggableCommService\obj\Debug\PluggableCommService.pdb
+\\vmware-host\Shared Folders\Documents\Course\CES681\Demo\NavigatorClientServer\MessagePassingCommService\bin\Debug\PluggableCommService.exe.config
+\\vmware-host\Shared Folders\Documents\Course\CES681\Demo\NavigatorClientServer\MessagePassingCommService\bin\Debug\PluggableCommService.exe
+\\vmware-host\Shared Folders\Documents\Course\CES681\Demo\NavigatorClientServer\MessagePassingCommService\bin\Debug\PluggableCommService.pdb
+\\vmware-host\Shared Folders\Documents\Course\CES681\Demo\NavigatorClientServer\MessagePassingCommService\bin\Debug\Environment.dll
+\\vmware-host\Shared Folders\Documents\Course\CES681\Demo\NavigatorClientServer\MessagePassingCommService\bin\Debug\IService.dll
+\\vmware-host\Shared Folders\Documents\Course\CES681\Demo\NavigatorClientServer\MessagePassingCommService\bin\Debug\TestUtilities.exe
+\\vmware-host\Shared Folders\Documents\Course\CES681\Demo\NavigatorClientServer\MessagePassingCommService\bin\Debug\Environment.pdb
+\\vmware-host\Shared Folders\Documents\Course\CES681\Demo\NavigatorClientServer\MessagePassingCommService\bin\Debug\IService.pdb
+\\vmware-host\Shared Folders\Documents\Course\CES681\Demo\NavigatorClientServer\MessagePassingCommService\bin\Debug\IService.dll.config
+\\vmware-host\Shared Folders\Documents\Course\CES681\Demo\NavigatorClientServer\MessagePassingCommService\bin\Debug\TestUtilities.pdb
+\\vmware-host\Shared Folders\Documents\Course\CES681\Demo\NavigatorClientServer\MessagePassingCommService\bin\Debug\TestUtilities.exe.config
+\\vmware-host\Shared Folders\Documents\Course\CES681\Demo\NavigatorClientServer\MessagePassingCommService\obj\Debug\MessagePassingCommService.csprojAssemblyReference.cache
+\\vmware-host\Shared Folders\Documents\Course\CES681\Demo\NavigatorClientServer\MessagePassingCommService\obj\Debug\MessagePassingCommService.csproj.CoreCompileInputs.cache
+\\vmware-host\Shared Folders\Documents\Course\CES681\Demo\NavigatorClientServer\MessagePassingCommService\obj\Debug\MessagePassingCommService.csproj.CopyComplete
+\\vmware-host\Shared Folders\Documents\Course\CES681\Demo\NavigatorClientServer\MessagePassingCommService\obj\Debug\PluggableCommService.exe
+\\vmware-host\Shared Folders\Documents\Course\CES681\Demo\NavigatorClientServer\MessagePassingCommService\obj\Debug\PluggableCommService.pdb

@@ -1,0 +1,13 @@
+C:\su\CSE681\code\Project3Sample\PluggableComm\IService\bin\Debug\IService.dll.config
+C:\su\CSE681\code\Project3Sample\PluggableComm\IService\bin\Debug\IService.dll
+C:\su\CSE681\code\Project3Sample\PluggableComm\IService\bin\Debug\IService.pdb
+C:\su\CSE681\code\Project3Sample\PluggableComm\IService\obj\Debug\IPluggableCommService.csprojResolveAssemblyReference.cache
+C:\su\CSE681\code\Project3Sample\PluggableComm\IService\obj\Debug\IPluggableCommService.csproj.CoreCompileInputs.cache
+C:\su\CSE681\code\Project3Sample\PluggableComm\IService\obj\Debug\IService.dll
+C:\su\CSE681\code\Project3Sample\PluggableComm\IService\obj\Debug\IService.pdb
+C:\su\CSE681\code\Project3HelpF2017\PluggableComm\IService\bin\Debug\IService.dll.config
+C:\su\CSE681\code\Project3HelpF2017\PluggableComm\IService\bin\Debug\IService.dll
+C:\su\CSE681\code\Project3HelpF2017\PluggableComm\IService\bin\Debug\IService.pdb
+C:\su\CSE681\code\Project3HelpF2017\PluggableComm\IService\obj\Debug\IPluggableCommService.csproj.CoreCompileInputs.cache
+C:\su\CSE681\code\Project3HelpF2017\PluggableComm\IService\obj\Debug\IService.dll
+C:\su\CSE681\code\Project3HelpF2017\PluggableComm\IService\obj\Debug\IService.pdb

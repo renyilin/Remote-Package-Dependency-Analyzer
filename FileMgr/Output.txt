@@ -1,0 +1,29 @@
+﻿
+  Demonstrate Directory Navigation with Delegates
+ =================================================
+  Command Line: ../.. *.cs *.log
+  ++ C:\su\Repository\CSharp\NavigateWithDelegates
+  --   AssemblyInfo.cs                         2426 bytes  9/15/2002 2:24:34 PM
+  --   NavigateWithDelegates.cs                3784 bytes  8/19/2018 7:52:55 PM
+  --   Test.cs                                 2286 bytes  8/19/2018 7:52:55 PM
+  ++ C:\su\Repository\CSharp\NavigateWithDelegates\.vs
+  ++ C:\su\Repository\CSharp\NavigateWithDelegates\.vs\Navigate
+  ++ C:\su\Repository\CSharp\NavigateWithDelegates\.vs\Navigate\v14
+  ++ C:\su\Repository\CSharp\NavigateWithDelegates\.vs\Navigate\v15
+  ++ C:\su\Repository\CSharp\NavigateWithDelegates\.vs\Navigate\v15\Server
+  ++ C:\su\Repository\CSharp\NavigateWithDelegates\.vs\Navigate\v15\Server\sqlite3
+  ++ C:\su\Repository\CSharp\NavigateWithDelegates\Backup
+  --   AssemblyInfo.cs                         2426 bytes  9/15/2002 2:24:34 PM
+  --   NavigateWithDelegates.cs                2581 bytes  9/5/2006 7:57:09 PM
+  --   Test.cs                                 2029 bytes  9/4/2006 6:53:33 PM
+  ++ C:\su\Repository\CSharp\NavigateWithDelegates\bin
+  ++ C:\su\Repository\CSharp\NavigateWithDelegates\bin\Debug
+  --   WS_FTP.LOG                               440 bytes  9/5/2006 8:02:31 PM
+  ++ C:\su\Repository\CSharp\NavigateWithDelegates\obj
+  --   WS_FTP.LOG                               266 bytes  9/5/2006 8:02:42 PM
+  ++ C:\su\Repository\CSharp\NavigateWithDelegates\obj\Debug
+  --   WS_FTP.LOG                               440 bytes  9/5/2006 8:02:41 PM
+  ++ C:\su\Repository\CSharp\NavigateWithDelegates\obj\Debug\TempPE
+
+Press any key to continue . . .
+

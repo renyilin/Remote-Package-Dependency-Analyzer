@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
+    <StartAction>Project</StartAction>
+    <StartArguments>../../Test/ PkgA.txt PkgB.txt PkgC.txt</StartArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Test' ">
+    <StartAction>Project</StartAction>
+    <StartArguments>../../Test/ PkgA.txt PkgB.txt PkgC.txt</StartArguments>
+  </PropertyGroup>
+</Project>

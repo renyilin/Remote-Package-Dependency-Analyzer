@@ -1,0 +1,23 @@
+    //----< is tok a terminator for the current semi-expression? >---
+
+    bool isTerminator(Token tok)
+    {
+      if (tok == ";" || tok == "{" || tok == "}")
+        return true;
+      if (tok.Length > 0 && tok[0] == '\n')
+      {
+        trim();
+        if (toks.Count > 0 && toks[0] == "#")
+          return true;
+      }
+      return false;
+    }
+
+#if(Test_Test.txt)
+  int main() {
+
+    for(int i=0; i<3; ++i) { /* test folding */ }
+    std::cout << "\n hello world\n\n";
+  }
+#endif
+

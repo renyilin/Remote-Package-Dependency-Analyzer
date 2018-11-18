@@ -1,0 +1,26 @@
+Test.txt - used to test Toker
+=============================
+"--Test comments--"
+// this is a single line comment
+/*
+  this is a multi line comment
+  last line
+*/
+"--Test quoted things--"
+abc"embedded string"123
+"\"a quoted string\""
+@"this \ is a \\ C# \\\ string";
+this is a single quote 'c';
+this is a single quote character '\''
+this is a double quote "a literal string"
+this is a double quote character '\"'
+"---Test alphanumerics---"
+123abc 4d 56ef ghi789
+"---test some combinations---"
+(tok)// tricky comment
+[3]/* another tricky comment */-->>
+\\"a tricky string"-->>
+??'z'-->>
+"---Test single and two char tokens---"
+<>=+*-(){}[]////\\\\
+"---End of Test---"

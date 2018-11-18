@@ -1,0 +1,46 @@
+
+                                      CodeAnalysis - Version 1.8
+    ==============================================================================================
+     Wed Oct 31 21:27:23 2018
+     Path: "Z:\Documents\Course\CES681\MyHomework\Project3\PkgDpdAnalysis\DepAnalysis"
+     Args: RulesAndActionsForDepAnly.cs, /v, /m, /r, /f, /p
+                                                                               
+           Code Metrics - Start Line, Size (lines/code), and Complexity (number of scopes)
+    ==============================================================================================
+
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+                             namespace                   Global Namespace       1       1      46
+
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+   RulesAndActionsForDepAn   namespace                        DepAnalysis      46     260      45
+   RulesAndActionsForDepAn       class                    DetectUsingType      51      28       4
+   RulesAndActionsForDepAn    function                               test      53      24       3
+   RulesAndActionsForDepAn       class                         DetectType      83      55       9
+   RulesAndActionsForDepAn    function                     isPossibleType      99       4       1
+   RulesAndActionsForDepAn    function                         isKeywords     105       3       1
+   RulesAndActionsForDepAn    function                               test     110      26       5
+   RulesAndActionsForDepAn       class                  DetectInheritType     142      45       9
+   RulesAndActionsForDepAn    function                     isPossibleType     144       3       1
+   RulesAndActionsForDepAn    function                               test     149      36       7
+   RulesAndActionsForDepAn       class                      AddDependency     191      75      13
+   RulesAndActionsForDepAn    function                      AddDependency     193       3       1
+   RulesAndActionsForDepAn    function                    aliasToFullName     198      16       4
+   RulesAndActionsForDepAn    function                           doAction     216      48       7
+   RulesAndActionsForDepAn       class                       AddUsingPkgs     270      26       7
+   RulesAndActionsForDepAn    function                       AddUsingPkgs     272       3       1
+   RulesAndActionsForDepAn    function                           doAction     277      17       5
+   RulesAndActionsForDepAn    function                                 >>     289       1       1
+   RulesAndActionsForDepAn       class          RulesAndActionsForDepAnly     299       7       2
+   RulesAndActionsForDepAn    function                               Main     301       3       1
+
+                          Functions Exceeding Metric Limits and Public Data
+    ==============================================================================================
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+
+
+
+    searched     9 dirs
+   processed     1 files

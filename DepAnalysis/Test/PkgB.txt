@@ -1,0 +1,25 @@
+using System;
+using Lexer;
+using nsPkgA;
+using nsPkgC;
+
+namespace nsPkgB
+{
+	public class ClassA
+	{
+		
+	}
+	
+	public class ClassC
+	{
+		void fun1()
+        {
+            Office office = new Office();
+        }
+	}
+	
+	public class Dog //: Animal
+	{
+		
+	}
+}

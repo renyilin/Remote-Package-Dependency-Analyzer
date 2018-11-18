@@ -1,0 +1,34 @@
+
+                                      CodeAnalysis - Version 1.8
+    ==============================================================================================
+     Wed Oct 31 21:32:03 2018
+     Path: "Z:\Documents\Course\CES681\MyHomework\Project3\PkgDpdAnalysis\DemoExecutive"
+     Args: Tester.cs, /v, /m, /r, /f, /p
+                                                                               
+           Code Metrics - Start Line, Size (lines/code), and Complexity (number of scopes)
+    ==============================================================================================
+
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+                             namespace                   Global Namespace       1       1      22
+
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+                 Tester.cs   namespace                        DepAnalysis      39     147      21
+                 Tester.cs       class                          Executive      43     143      20
+                 Tester.cs    function                 ProcessCommandline      46      18       3
+                 Tester.cs    function                          findFiles      66      10       2
+                 Tester.cs    function                    ShowCommandLine      78       9       2
+                 Tester.cs    function                     BuildTypeTable      89      34       5
+                 Tester.cs    function                        depAnalysis     125      33       6
+                 Tester.cs    function                               Main     161      22       1
+
+                          Functions Exceeding Metric Limits and Public Data
+    ==============================================================================================
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+
+
+
+    searched    10 dirs
+   processed     1 files
