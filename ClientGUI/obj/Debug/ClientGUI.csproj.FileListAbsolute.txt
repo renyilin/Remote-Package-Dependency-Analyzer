@@ -49,3 +49,12 @@ Z:\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\ClientGUI\Clien
 \\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\ClientGUI\bin\Debug\Environment.dll
 \\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\ClientGUI\bin\Debug\Environment.pdb
 \\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\ClientGUI\obj\Debug\ClientGUI.csproj.CopyComplete
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\ClientGUI\bin\Debug\IService.dll
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\ClientGUI\bin\Debug\PluggableCommService.exe
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\ClientGUI\bin\Debug\TestUtilities.exe
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\ClientGUI\bin\Debug\IService.pdb
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\ClientGUI\bin\Debug\IService.dll.config
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\ClientGUI\bin\Debug\PluggableCommService.pdb
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\ClientGUI\bin\Debug\PluggableCommService.exe.config
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\ClientGUI\bin\Debug\TestUtilities.pdb
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\ClientGUI\bin\Debug\TestUtilities.exe.config

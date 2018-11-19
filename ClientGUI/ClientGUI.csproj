@@ -112,6 +112,18 @@
       <Project>{73a22a67-d989-4c49-b109-ee1cc7917094}</Project>
       <Name>Environment</Name>
     </ProjectReference>
+    <ProjectReference Include="..\IMessagePassingCommService\IMessagePassingCommService.csproj">
+      <Project>{7d2c285e-9231-443e-99f1-7771b141c8f0}</Project>
+      <Name>IMessagePassingCommService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MessagePassingCommService\MessagePassingCommService.csproj">
+      <Project>{6a9df216-52d2-4e9c-be52-872dc211fcae}</Project>
+      <Name>MessagePassingCommService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestUtilities\TestUtilities.csproj">
+      <Project>{bf6a68ce-ef4e-40e4-af2e-ce9bf2b6cfed}</Project>
+      <Name>TestUtilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -117,11 +117,42 @@ namespace MessagePassingComm
       }
     }
 
-#if(TEST_TESTUTILITIES)
+        /// <summary>
+        /// Creates a relative path from one file or folder to another.
+        /// </summary>
+        /// <param name="fromPath">Contains the directory that defines the start of the relative path.</param>
+        /// <param name="toPath">Contains the path that defines the endpoint of the relative path.</param>
+        /// <returns>The relative path from the start directory to the end path or <c>toPath</c> if the paths are not related.</returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="UriFormatException"></exception>
+        /// <exception cref="InvalidOperationException"></exception>
+        //  Author: Dave, James Ko
+        public static String MakeRelativePath(String fromPath, String toPath)
+    {
+        if (String.IsNullOrEmpty(fromPath)) throw new ArgumentNullException("fromPath");
+        if (String.IsNullOrEmpty(toPath)) throw new ArgumentNullException("toPath");
 
-    /*----< construction test >------------------------------------*/
+        Uri fromUri = new Uri(fromPath);
+        Uri toUri = new Uri(toPath);
 
-    static void Main(string[] args)
+        if (fromUri.Scheme != toUri.Scheme) { return toPath; } // path can't be made relative.
+
+        Uri relativeUri = fromUri.MakeRelativeUri(toUri);
+        String relativePath = Uri.UnescapeDataString(relativeUri.ToString());
+
+        if (toUri.Scheme.Equals("file", StringComparison.InvariantCultureIgnoreCase))
+        {
+            relativePath = relativePath.Replace(System.IO.Path.AltDirectorySeparatorChar, System.IO.Path.DirectorySeparatorChar);
+        }
+
+            return relativePath;
+    }
+
+#if (TEST_TESTUTILITIES)
+
+        /*----< construction test >------------------------------------*/
+
+        static void Main(string[] args)
     {
       title("Testing TestUtilities", '=');
       ClientEnvironment.verbose = true;
@@ -134,6 +165,8 @@ namespace MessagePassingComm
 
       Func<bool> throwTest = () => { Console.Write("\n  throw test"); throw new Exception(); return false; };
       checkResult(handleInvoke(throwTest), "TestUtilities.handleInvoke");
+
+      
 
       Console.Write("\n\n");
     }

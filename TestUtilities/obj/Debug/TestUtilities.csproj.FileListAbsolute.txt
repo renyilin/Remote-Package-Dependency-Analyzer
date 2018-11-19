@@ -31,3 +31,16 @@ C:\su\CSE681\code\Project3HelpF2017\PluggableComm\TestUtilities\obj\Debug\TestUt
 \\vmware-host\Shared Folders\Documents\Course\CES681\Demo\NavigatorClientServer\TestUtilities\obj\Debug\TestUtilities.csproj.CopyComplete
 \\vmware-host\Shared Folders\Documents\Course\CES681\Demo\NavigatorClientServer\TestUtilities\obj\Debug\TestUtilities.exe
 \\vmware-host\Shared Folders\Documents\Course\CES681\Demo\NavigatorClientServer\TestUtilities\obj\Debug\TestUtilities.pdb
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\TestUtilities\bin\Debug\TestUtilities.exe.config
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\TestUtilities\bin\Debug\TestUtilities.exe
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\TestUtilities\bin\Debug\TestUtilities.pdb
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\TestUtilities\bin\Debug\Environment.dll
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\TestUtilities\bin\Debug\IService.dll
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\TestUtilities\bin\Debug\Environment.pdb
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\TestUtilities\bin\Debug\IService.pdb
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\TestUtilities\bin\Debug\IService.dll.config
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\TestUtilities\obj\Debug\TestUtilities.csprojAssemblyReference.cache
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\TestUtilities\obj\Debug\TestUtilities.csproj.CoreCompileInputs.cache
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\TestUtilities\obj\Debug\TestUtilities.csproj.CopyComplete
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\TestUtilities\obj\Debug\TestUtilities.exe
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\TestUtilities\obj\Debug\TestUtilities.pdb

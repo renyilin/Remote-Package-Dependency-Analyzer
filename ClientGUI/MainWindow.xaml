@@ -13,7 +13,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClientGUI"
         mc:Ignorable="d"
-        Title="  Remote Dependency Analyzer" Icon="Images/icon.png" ResizeMode="NoResize" Height="540" Width="500">
+        Title="  Remote Dependency Analyzer" Icon="Images/icon.png" ResizeMode="NoResize" Height="540" Width="500"
+        Closed="Window_Closed">
 
     <Window.Resources>
         <Style TargetType="{x:Type TextBlock}">
