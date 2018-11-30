@@ -13,8 +13,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClientGUI"
         mc:Ignorable="d"
-        Title="  Remote Dependency Analyzer" Icon="Images/icon.png" ResizeMode="NoResize" Height="540" Width="500"
-        Closed="Window_Closed">
+        Title="  Remote Dependency Analyzer" Icon="Images/icon.png" ResizeMode="NoResize" Height="580" Width="500"
+        Closed="Window_Closed" >
 
     <Window.Resources>
         <Style TargetType="{x:Type TextBlock}">
@@ -71,7 +71,9 @@
                             </StackPanel>
                         </HierarchicalDataTemplate>
                     </StackPanel.Resources>
-                        <Grid  Margin="10,15,10,0" Height="25">
+                        <TextBlock  Text="Selected Directory for Analysis:"  VerticalAlignment ="Center" Margin="10,10,0,0" />
+                        <TextBox Name="tbkPath" Grid.Column="0" FontWeight="Bold" Foreground="Black" IsEnabled="False" Padding="5" VerticalAlignment ="Center" Margin="10,10,10,0" Background="#eee" />
+                        <Grid  Margin="10,10,10,0" Height="25">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="1.2*"/>
                                 <ColumnDefinition Width="0.6*"/>
@@ -80,16 +82,14 @@
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Column="0" Text="Remote Repository:" HorizontalAlignment="left" VerticalAlignment ="Bottom" Grid.ColumnSpan="2" Margin="0,0,0,3" Width="180"/>
                             <!--<Button Grid.Column="2" Content="Select Directory" HorizontalAlignment="center" Padding="10,0,10,0"></Button>-->
-                            <Button Grid.Column="3" HorizontalAlignment="Right" Background='AliceBlue'>
+                            <Button Name="refresh" Click="Refresh_Click" Grid.Column="3" HorizontalAlignment="Right" Background='AliceBlue'>
                                 <StackPanel>
                                     <Image Source="Images/refresh.png" Width="18" Margin="2" />
                                 </StackPanel>
                             </Button>
                         </Grid>
-                    <TreeView Name ="folderTree" SelectedItemChanged="FolderTree_SelectedItemChanged" MouseDoubleClick="FolderTree_MouseDoubleClick" ItemsSource="{Binding FFcollection}" Margin="10,5,10,0" Height="260" VerticalAlignment="Stretch">
+                    <TreeView Name ="folderTree" SelectedItemChanged="FolderTree_SelectedItemChanged" MouseDoubleClick="FolderTree_MouseDoubleClick" ItemsSource="{Binding FFcollection}" Margin="10,5,10,0" Height="300" VerticalAlignment="Stretch">
                     </TreeView>
-                    <TextBlock  Text="Selected Directory for Analysis:"  VerticalAlignment ="Center" Margin="10,10,0,0" />
-                    <TextBox Name="tbkPath" Grid.Column="0" Text="C:\" IsEnabled="False" Padding="5" VerticalAlignment ="Center" Margin="10,5,10,0" Background="#eee" />
                     <Button Name="btnExecute" Content="Dependency Analyze" Margin="10,18,10,0" Padding="6" Background='AliceBlue' ></Button>
                 </StackPanel>
             </TabItem>

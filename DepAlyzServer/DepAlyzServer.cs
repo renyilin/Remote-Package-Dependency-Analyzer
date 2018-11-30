@@ -91,6 +91,11 @@ namespace DepAlyzServer
                 reply.to = msg.from;
                 reply.from = msg.to;
                 reply.command = "moveIntoFolderFiles";
+
+                //foreach (string f in localFileMgr.getFiles().ToList<string>())
+                //{
+                //    reply.arguments.Add(TestUtilities.MakeRelativePath(localFileMgr.currentPath, f));
+                //}
                 reply.arguments = localFileMgr.getFiles().ToList<string>();
                 return reply;
             };

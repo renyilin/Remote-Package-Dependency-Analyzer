@@ -75,6 +75,7 @@ namespace FileMgr
             for (int i = 0; i < files.Count(); ++i)
             {
                 files[i] = Path.Combine(currentPath, Path.GetFileName(files[i]));
+                //files[i] = Path.GetFileName(files[i]);
             }
             return files;
         }
@@ -89,6 +90,7 @@ namespace FileMgr
             {
                 string dirName = new DirectoryInfo(dirs[i]).Name;
                 dirs[i] = Path.Combine(currentPath, dirName);
+                //dirs[i] = dirName;
             }
             return dirs;
         }
