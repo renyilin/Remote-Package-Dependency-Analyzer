@@ -21,6 +21,8 @@ namespace DepAnalysis
             foreach (string file in files)
             {
                 //Console.Write("\n  Processing file {0}", System.IO.Path.GetFileName(file));
+                if (file.Contains("TemporaryGeneratedFile") || file.Contains("AssemblyInfo"))
+                    continue;
 
                 if (!repo.semi.open(file as string))
                 {
@@ -49,7 +51,7 @@ namespace DepAnalysis
 
         }
 
-        public static List<string> ProcessCommandline(string[] args)
+        public static List<string> ProcessCommandline(string[] args, bool optionFileRecursion)
         {
             List<string> files = new List<string>();
             if (args.Length < 1)
@@ -64,19 +66,22 @@ namespace DepAnalysis
                 return files;
             }
             path = Path.GetFullPath(path);
-            files = findFiles(path, "*.cs");
+            files = findFiles(path, "*.cs", optionFileRecursion);
 
             return files;
         }
 
-        public static List<string> findFiles(string searchpath, string pattern)
+        public static List<string> findFiles(string searchpath, string pattern, bool optionFileRecursion)
         {
             List<string> fileList = Directory.GetFiles(searchpath, pattern).ToList();
-            foreach (string dir in Directory.GetDirectories(searchpath))
+            if (optionFileRecursion)
             {
-                if (dir == "." || dir == "..")
-                    continue;
-                fileList.AddRange(findFiles(dir, pattern));
+                foreach (string dir in Directory.GetDirectories(searchpath))
+                {
+                    if (dir == "." || dir == "..")
+                        continue;
+                    fileList.AddRange(findFiles(dir, pattern, optionFileRecursion));
+                }
             }
             return fileList;
         }
@@ -91,6 +96,9 @@ namespace DepAnalysis
 
             foreach (string file in files)
             {
+                if (file.Contains("TemporaryGeneratedFile") || file.Contains("AssemblyInfo"))
+                    continue;
+
                 if (!repo.semi.open(file as string))
                 {
                     Console.Write("\n  Can't open {0}\n\n", args[0]);
@@ -116,8 +124,10 @@ namespace DepAnalysis
 
         }
 
-        static public void showDependency(CsGraph<FileNode, string> DepGraph, StreamWriter streamWriter)
+        static public void showDependency(CsGraph<FileNode, string> DepGraph, StreamWriter streamWriter )
         {
+            Console.Write("\nDependency Analysis:");
+            streamWriter.Write("\r\nDependency Analysis: ");
 
             foreach (CsNode<FileNode, string> node in DepGraph.adjList)
             {
@@ -161,13 +171,18 @@ namespace DepAnalysis
         }
 
         static void Main(string[] args)
-        {           
+        {
+
+            bool optionDA = Boolean.Parse(args[1]);
+            bool optionSC = Boolean.Parse(args[2]);
+            bool optionFileRecursion = Boolean.Parse(args[3]);
+
             using (StreamWriter streamWriter = new StreamWriter(resultFilePath))
             {
                 Console.WriteLine("Processing path: {0}", args[0]);
                 streamWriter.WriteLine("Processing path: {0}", args[0]);
 
-                List<string> files = ProcessCommandline(args);
+                List<string> files = ProcessCommandline(args, optionFileRecursion);
                 Repository repo = new Repository();
                 repo.semi = Factory.create();
                 BuildTypeTable(args, files, repo);
@@ -176,14 +191,18 @@ namespace DepAnalysis
                 //Display.showAliasTable(repo.aliasTable);
                 //Console.WriteLine();
                 depAnalysis(args, files, repo);
-                Console.Write("\nDependency Analysis:");
-                streamWriter.Write("\r\nDependency Analysis: ");
-                showDependency(repo.depGraph, streamWriter);
-                Console.Write("\r\n");
-                streamWriter.WriteLine("");
-                var strongComponents = TarjanSccSolver.DetectCycle(repo.depGraph);
-                showStrongComponents(strongComponents, streamWriter);
-  
+                if (optionDA)
+                {
+                    showDependency(repo.depGraph, streamWriter);
+                    Console.Write("\r\n");
+                    streamWriter.WriteLine("");
+                }
+
+                if (optionSC)
+                {
+                    var strongComponents = TarjanSccSolver.DetectCycle(repo.depGraph);
+                    showStrongComponents(strongComponents, streamWriter);
+                }
             }
 
             //Console.Read();

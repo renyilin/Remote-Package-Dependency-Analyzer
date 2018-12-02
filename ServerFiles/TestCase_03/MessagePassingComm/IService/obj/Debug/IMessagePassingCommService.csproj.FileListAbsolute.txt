@@ -1,0 +1,20 @@
+C:/su/CSE681/code/Project3HelpF2017/PluggableComm/IService/bin/Debug/IService.dll.config
+C:/su/CSE681/code/Project3HelpF2017/PluggableComm/IService/bin/Debug/IService.dll
+C:/su/CSE681/code/Project3HelpF2017/PluggableComm/IService/bin/Debug/IService.pdb
+C:/su/CSE681/code/Project3HelpF2017/PluggableComm/IService/obj/Debug/IMessagePassingCommService.csproj.CoreCompileInputs.cache
+C:/su/CSE681/code/Project3HelpF2017/PluggableComm/IService/obj/Debug/IService.dll
+C:/su/CSE681/code/Project3HelpF2017/PluggableComm/IService/obj/Debug/IService.pdb
+/Users/ryl/Documents/Course/CES681/Demo/MessagePassingComm-1/IService/bin/Debug/IService.dll.config
+/Users/ryl/Documents/Course/CES681/Demo/MessagePassingComm-1/IService/bin/Debug/IService.dll
+/Users/ryl/Documents/Course/CES681/Demo/MessagePassingComm-1/IService/bin/Debug/IService.pdb
+/Users/ryl/Documents/Course/CES681/Demo/MessagePassingComm-1/IService/obj/Debug/IMessagePassingCommService.csprojAssemblyReference.cache
+/Users/ryl/Documents/Course/CES681/Demo/MessagePassingComm-1/IService/obj/Debug/IMessagePassingCommService.csproj.CoreCompileInputs.cache
+/Users/ryl/Documents/Course/CES681/Demo/MessagePassingComm-1/IService/obj/Debug/IService.dll
+/Users/ryl/Documents/Course/CES681/Demo/MessagePassingComm-1/IService/obj/Debug/IService.pdb
+\\vmware-host\Shared Folders\Documents\Course\CES681\Demo\MessagePassingComm-1\IService\bin\Debug\IService.dll.config
+\\vmware-host\Shared Folders\Documents\Course\CES681\Demo\MessagePassingComm-1\IService\bin\Debug\IService.dll
+\\vmware-host\Shared Folders\Documents\Course\CES681\Demo\MessagePassingComm-1\IService\bin\Debug\IService.pdb
+\\vmware-host\Shared Folders\Documents\Course\CES681\Demo\MessagePassingComm-1\IService\obj\Debug\IMessagePassingCommService.csproj.CoreCompileInputs.cache
+\\vmware-host\Shared Folders\Documents\Course\CES681\Demo\MessagePassingComm-1\IService\obj\Debug\IService.dll
+\\vmware-host\Shared Folders\Documents\Course\CES681\Demo\MessagePassingComm-1\IService\obj\Debug\IService.pdb
+\\vmware-host\Shared Folders\Documents\Course\CES681\Demo\MessagePassingComm-1\IService\obj\Debug\IMessagePassingCommService.csprojAssemblyReference.cache

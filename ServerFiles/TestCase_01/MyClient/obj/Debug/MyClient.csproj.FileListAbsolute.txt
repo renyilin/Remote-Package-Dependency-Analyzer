@@ -1,0 +1,7 @@
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyTestDemo\MyBasicWCF\ConsoleApp1\MyClient\bin\Debug\MyClient.exe.config
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyTestDemo\MyBasicWCF\ConsoleApp1\MyClient\bin\Debug\MyClient.exe
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyTestDemo\MyBasicWCF\ConsoleApp1\MyClient\bin\Debug\MyClient.pdb
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyTestDemo\MyBasicWCF\ConsoleApp1\MyClient\obj\Debug\MyClient.csprojAssemblyReference.cache
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyTestDemo\MyBasicWCF\ConsoleApp1\MyClient\obj\Debug\MyClient.csproj.CoreCompileInputs.cache
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyTestDemo\MyBasicWCF\ConsoleApp1\MyClient\obj\Debug\MyClient.exe
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyTestDemo\MyBasicWCF\ConsoleApp1\MyClient\obj\Debug\MyClient.pdb

@@ -1,0 +1,7 @@
+====================
+ Build Instructions
+====================
+1. You must run Visual Studio as administrator
+2. rebuild solution
+3. Top Menu > Debug > Start without debuggin
+

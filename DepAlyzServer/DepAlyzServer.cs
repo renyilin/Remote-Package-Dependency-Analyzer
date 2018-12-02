@@ -114,10 +114,17 @@ namespace DepAlyzServer
             Func<CommMessage, CommMessage> depAnalysis = (CommMessage msg) =>
             {
                 string absDepAnalyzerPath = System.IO.Path.GetFullPath(MessagePassingComm.ServerEnvironment.DepAnalyzerPath);
-                string anlyzDir = MessagePassingComm.ServerEnvironment.root + msg.arguments[0].Substring(2);
-                
+                string anlyzDir;
+                if (msg.arguments[0].Length >= 2)
+                    anlyzDir = MessagePassingComm.ServerEnvironment.root + msg.arguments[0].Substring(2);
+                else
+                    anlyzDir = MessagePassingComm.ServerEnvironment.root;
+                string optionDA = msg.arguments[1];
+                string optionSC = msg.arguments[2];
+                string optionFileRecursion = msg.arguments[3];
+                string commandline = anlyzDir + ' ' + optionDA + ' ' + optionSC + ' ' + optionFileRecursion;
 
-                CommMessage reply = createProcess(absDepAnalyzerPath, anlyzDir, msg);
+                CommMessage reply = createProcess(absDepAnalyzerPath, commandline, msg);
                 return reply;
             };
             messageDispatcher["depAnalysis"] = depAnalysis;

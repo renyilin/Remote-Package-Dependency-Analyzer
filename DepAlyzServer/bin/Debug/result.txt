@@ -1,15 +1,7 @@
-Processing path: ..\..\..\ServerFiles\SpecialTestCases
+Processing path: ..\..\..\ServerFiles\TestCase_02
 
 Dependency Analysis: 
-- Interface2.cs doesn't depend on any packages.
-- TC3.cs depends on: TC2.cs TC4.cs
-- TC2.cs depends on: TC3.cs
-- TC1.cs depends on: Interface1.cs Interface2.cs TC2.cs
-- TC4.cs depends on: TC3.cs
-- Interface1.cs doesn't depend on any packages.
-
-Strong Components:
-- [Interface2.cs]
-- [TC4.cs, TC2.cs, TC3.cs]
-- [Interface1.cs]
-- [TC1.cs]
+- PkgA.cs depends on: PkgC.cs PkgB.cs
+- PkgB.cs depends on: PkgA.cs
+- PkgC.cs depends on: PkgA.cs PkgB.cs
+- EmptyClass.cs doesn't depend on any packages.

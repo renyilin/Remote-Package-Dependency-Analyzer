@@ -1,0 +1,7 @@
+============
+ To Do Soon
+============
+1. Add dispatcher to turn messages into function calls
+   - extracts command key and parameters
+   - uses key in dispatcher Dictionary to invoke functions
+

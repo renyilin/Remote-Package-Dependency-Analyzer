@@ -237,7 +237,7 @@ namespace ClientGUI
                     tb_results.AppendText("\n");   
                 }
                 btnExecute.IsEnabled = true;
-                MessageBox.Show("Dependency analysis completed. Please view results in \"Results\" tab.", "Information");//,MessageBoxButton.OK,MessageBoxImage.Information);
+                //MessageBox.Show("Dependency analysis completed. Please view results in \"Results\" tab.", "Information");//,MessageBoxButton.OK,MessageBoxImage.Information);
                 TabControl.SelectedItem = TabResults;
             };
 
@@ -279,7 +279,11 @@ namespace ClientGUI
             msg1.from = ClientEnvironment.endPoint;
             msg1.to = ServerEnvironment.endPoint;
             msg1.command = "depAnalysis";
-            msg1.arguments.Add(tbkPath.Text);
+            string optionDA = cb_DA.IsChecked.ToString();
+            string optionSC = cb_SC.IsChecked.ToString();
+            string optionFileRecursion = RB_sub.IsChecked.ToString();
+            string path = tbkPath.Text;
+            msg1.arguments = new List<string> { path, optionDA, optionSC, optionFileRecursion };
             comm.postMessage(msg1);
 
         }
