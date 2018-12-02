@@ -30,7 +30,7 @@ namespace MessagePassingComm
 
   public struct ClientEnvironment
   {
-    public static string root { get; set; } = "../../../ClientFiles/";
+    public static string root { get; set; } = "..\\..\\..\\ClientFiles\\";
     public const long blockSize = 1024;
     public static string endPoint { get; set; } = "http://localhost:8090/IMessagePassingComm";
     public static string address { get; set; } = "http://localhost";
@@ -40,11 +40,13 @@ namespace MessagePassingComm
 
   public struct ServerEnvironment
   {
-    public static string root { get; set; } = "../../../ServerFiles/";
+    public static string root { get; set; } = "..\\..\\..\\ServerFiles\\";
     public const long blockSize = 1024;
     public static string endPoint { get; set; } = "http://localhost:8080/IMessagePassingComm";
     public static string address { get; set; } = "http://localhost";
     public static int port { get; set; } = 8080;
     public static bool verbose { get; set; } = false;
-  }
+    public static string DepAnalyzerPath { get; set; } = "..\\..\\..\\Executive\\bin\\Debug\\Executive.exe";
+    public static string resultFilePath { get; set; } = ".\\result.txt";
+    }
 }

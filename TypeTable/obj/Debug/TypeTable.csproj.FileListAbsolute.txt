@@ -15,7 +15,6 @@ Z:\Documents\Course\CES681\MyHomework\Project3\PkgDpdAnalysis\TypeTable\obj\Debu
 \\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\TypeTable\bin\Debug\TypeTable.exe.config
 \\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\TypeTable\bin\Debug\TypeTable.exe
 \\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\TypeTable\bin\Debug\TypeTable.pdb
-\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\TypeTable\obj\Debug\TypeTable.csprojAssemblyReference.cache
 \\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\TypeTable\obj\Debug\TypeTable.csproj.CoreCompileInputs.cache
 \\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\TypeTable\obj\Debug\TypeTable.exe
 \\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\TypeTable\obj\Debug\TypeTable.pdb

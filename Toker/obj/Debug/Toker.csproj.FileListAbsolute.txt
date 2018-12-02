@@ -29,7 +29,6 @@ Z:\Documents\Course\CES681\MyHomework\Project3\PkgDpdAnalysis\Toker\obj\Debug\To
 \\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\Toker\bin\Debug\Toker.dll.config
 \\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\Toker\bin\Debug\Toker.dll
 \\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\Toker\bin\Debug\Toker.pdb
-\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\Toker\obj\Debug\Toker.csprojAssemblyReference.cache
 \\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\Toker\obj\Debug\Toker.csproj.CoreCompileInputs.cache
 \\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\Toker\obj\Debug\Toker.dll
 \\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\Toker\obj\Debug\Toker.pdb

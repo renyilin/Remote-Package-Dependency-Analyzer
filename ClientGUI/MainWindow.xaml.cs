@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -27,26 +28,21 @@ namespace ClientGUI
             InitializeComponent();
             folderTree.DataContext = viewModel;
 
+            Console.Title = "Navigator Client";
+            Console.ForegroundColor = ConsoleColor.Yellow;
+
             comm = new Comm(ClientEnvironment.address, ClientEnvironment.port);
             initializeMessageDispatcher();
             rcvThread = new Thread(rcvThreadProc);
             rcvThread.Start();
 
-            //LoadNavigator(initPath);
-
-            //Folder newFolder = new Folder { FLabel = "root", FullPath = "." };
-            //viewModel.FolderDict[newFolder.FullPath] = newFolder.Children;
-            //ObservableCollection<IFileType> currentFolder = viewModel.FolderDict["."];
-
-            
             getTopFiles();
-            
-
-            
+                        
         }
 
         private void getTopFiles()
         {
+            tb_StatusBar.Text = "Connecting...";
             tbkPath.Text = ".";
             ObservableCollection<IFileType> currentFolder = viewModel.FolderDict["."];
             currentFolder.Clear();
@@ -124,10 +120,6 @@ namespace ClientGUI
                 string fullPath = fileType.FullPath;
                 if (fileType.FileType == FileTypeCal.Folder)
                 {
-                    //string fromPath = System.IO.Path.GetFullPath(MessagePassingComm.ServerEnvironment.root);
-                    //string toPath = System.IO.Path.GetFullPath(fullPath);
-                    //tbkPath.Text = ".\\" + TestUtilities.MakeRelativePath(fromPath, toPath);
-
                     tbkPath.Text = fullPath;
                 }
                 else
@@ -199,7 +191,7 @@ namespace ClientGUI
                     string path = getAncestor(1, msg.arguments[0]);
                     ObservableCollection<IFileType> currentFolder = viewModel.FolderDict[path];
                     //Remove all files in the current directory. 
-                    //currentFolder.Where(l => l.FileType == FileTypeCal.File).ToList().All(i => currentFolder.Remove(i));
+                    currentFolder.Where(l => l.FileType == FileTypeCal.File).ToList().All(i => currentFolder.Remove(i));
 
                     foreach (string file in msg.arguments)
                     {
@@ -219,17 +211,11 @@ namespace ClientGUI
                     string path = getAncestor(1, msg.arguments[0]);
                     ObservableCollection<IFileType> currentFolder = viewModel.FolderDict[path];
                     //Remove all Dirs in the current directory. 
-                    //currentFolder.Where(l => l.FileType == FileTypeCal.Folder).ToList().All(i => currentFolder.Remove(i));
+                    currentFolder.Where(l => l.FileType == FileTypeCal.Folder).ToList().All(i => currentFolder.Remove(i));
 
                     foreach (string dir in msg.arguments)
                     {
                         System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(dir);
-
-                        //string fullPath = System.IO.Path.Combine(path, di.Name);
-
-                        //string fromPath = System.IO.Path.GetFullPath(MessagePassingComm.ServerEnvironment.root);
-                        //string toPath = System.IO.Path.GetFullPath(fullPath);
-                        //string relativePath = ".\\" + TestUtilities.MakeRelativePath(fromPath, toPath);
 
                         Folder newFolder = new Folder { FLabel = di.Name, FullPath = dir };
                         currentFolder.Add(newFolder);
@@ -238,6 +224,23 @@ namespace ClientGUI
                     }
                 }
             };
+
+            //// Execute dependency analyzsis
+
+            messageDispatcher["depAnalysis"] = (CommMessage msg) =>
+            {
+                StringBuilder stringBuilder = new StringBuilder();
+                tb_results.Clear();
+                foreach (string str in msg.arguments)
+                {
+                    tb_results.AppendText(str);
+                    tb_results.AppendText("\n");   
+                }
+                btnExecute.IsEnabled = true;
+                MessageBox.Show("Dependency analysis completed. Please view results in \"Results\" tab.", "Information");//,MessageBoxButton.OK,MessageBoxImage.Information);
+                TabControl.SelectedItem = TabResults;
+            };
+
         }
 
         //----< define processing for GUI's receive thread >-------------
@@ -252,6 +255,7 @@ namespace ClientGUI
                 if (msg.command == null)
                     continue;
 
+                Dispatcher.Invoke(()=> tb_StatusBar.Text = "Connected. Double click on folders to open the folders.");
                 // pass the Dispatcher's action value to the main thread for execution
 
                 Dispatcher.Invoke(messageDispatcher[msg.command], new object[] { msg });
@@ -267,5 +271,19 @@ namespace ClientGUI
         {
             getTopFiles();
         }
+
+        private void BtnExecute_Click(object sender, RoutedEventArgs e)
+        {
+            btnExecute.IsEnabled = false;
+            CommMessage msg1 = new CommMessage(CommMessage.MessageType.request);
+            msg1.from = ClientEnvironment.endPoint;
+            msg1.to = ServerEnvironment.endPoint;
+            msg1.command = "depAnalysis";
+            msg1.arguments.Add(tbkPath.Text);
+            comm.postMessage(msg1);
+
+        }
+
+
     }
 }

@@ -17,3 +17,10 @@ C:\su\temp\NavigatorClient3\IService\obj\Debug\IService.pdb
 \\vmware-host\Shared Folders\Documents\Course\CES681\Demo\NavigatorClientServer\IMessagePassingCommService\obj\Debug\IMessagePassingCommService.csproj.CoreCompileInputs.cache
 \\vmware-host\Shared Folders\Documents\Course\CES681\Demo\NavigatorClientServer\IMessagePassingCommService\obj\Debug\IService.dll
 \\vmware-host\Shared Folders\Documents\Course\CES681\Demo\NavigatorClientServer\IMessagePassingCommService\obj\Debug\IService.pdb
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\IMessagePassingCommService\bin\Debug\IService.dll.config
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\IMessagePassingCommService\bin\Debug\IService.dll
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\IMessagePassingCommService\bin\Debug\IService.pdb
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\IMessagePassingCommService\obj\Debug\IMessagePassingCommService.csproj.CoreCompileInputs.cache
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\IMessagePassingCommService\obj\Debug\IService.dll
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\IMessagePassingCommService\obj\Debug\IService.pdb
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\IMessagePassingCommService\obj\Debug\IMessagePassingCommService.csprojAssemblyReference.cache

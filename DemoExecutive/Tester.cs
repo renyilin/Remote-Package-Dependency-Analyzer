@@ -39,7 +39,7 @@ namespace DepAnalysis
 {
   using Lexer;
 
-  class Executive
+  class DemoExecutive
   {
 
     public static List<string> ProcessCommandline(string[] args)
@@ -57,7 +57,7 @@ namespace DepAnalysis
             return files;
         }
         path = Path.GetFullPath(path);
-        files = Executive.findFiles(path, "*.cs");
+        files = DemoExecutive.findFiles(path, "*.cs");
 
         return files;
     }

@@ -27,6 +27,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MessagePassingComm;
 using FileMgr;
+using System.Diagnostics;
 
 namespace DepAlyzServer
 {
@@ -59,29 +60,29 @@ namespace DepAlyzServer
 
         void initializeDispatcher()
         {
-            Func<CommMessage, CommMessage> getTopFiles = (CommMessage msg) =>
-            {
-                localFileMgr.currentPath = "";
-                CommMessage reply = new CommMessage(CommMessage.MessageType.reply);
-                reply.to = msg.from;
-                reply.from = msg.to;
-                reply.command = "getTopFiles";
-                reply.arguments = localFileMgr.getFiles().ToList<string>();
-                return reply;
-            };
-            messageDispatcher["getTopFiles"] = getTopFiles;
+            //Func<CommMessage, CommMessage> getTopFiles = (CommMessage msg) =>
+            //{
+            //    localFileMgr.currentPath = "";
+            //    CommMessage reply = new CommMessage(CommMessage.MessageType.reply);
+            //    reply.to = msg.from;
+            //    reply.from = msg.to;
+            //    reply.command = "getTopFiles";
+            //    reply.arguments = localFileMgr.getFiles().ToList<string>();
+            //    return reply;
+            //};
+            //messageDispatcher["getTopFiles"] = getTopFiles;
 
-            Func<CommMessage, CommMessage> getTopDirs = (CommMessage msg) =>
-            {
-                localFileMgr.currentPath = "";
-                CommMessage reply = new CommMessage(CommMessage.MessageType.reply);
-                reply.to = msg.from;
-                reply.from = msg.to;
-                reply.command = "getTopDirs";
-                reply.arguments = localFileMgr.getDirs().ToList<string>();
-                return reply;
-            };
-            messageDispatcher["getTopDirs"] = getTopDirs;
+            //Func<CommMessage, CommMessage> getTopDirs = (CommMessage msg) =>
+            //{
+            //    localFileMgr.currentPath = "";
+            //    CommMessage reply = new CommMessage(CommMessage.MessageType.reply);
+            //    reply.to = msg.from;
+            //    reply.from = msg.to;
+            //    reply.command = "getTopDirs";
+            //    reply.arguments = localFileMgr.getDirs().ToList<string>();
+            //    return reply;
+            //};
+            //messageDispatcher["getTopDirs"] = getTopDirs;
 
             Func<CommMessage, CommMessage> moveIntoFolderFiles = (CommMessage msg) =>
             {
@@ -92,10 +93,6 @@ namespace DepAlyzServer
                 reply.from = msg.to;
                 reply.command = "moveIntoFolderFiles";
 
-                //foreach (string f in localFileMgr.getFiles().ToList<string>())
-                //{
-                //    reply.arguments.Add(TestUtilities.MakeRelativePath(localFileMgr.currentPath, f));
-                //}
                 reply.arguments = localFileMgr.getFiles().ToList<string>();
                 return reply;
             };
@@ -113,7 +110,72 @@ namespace DepAlyzServer
                 return reply;
             };
             messageDispatcher["moveIntoFolderDirs"] = moveIntoFolderDirs;
+
+            Func<CommMessage, CommMessage> depAnalysis = (CommMessage msg) =>
+            {
+                string absDepAnalyzerPath = System.IO.Path.GetFullPath(MessagePassingComm.ServerEnvironment.DepAnalyzerPath);
+                string anlyzDir = MessagePassingComm.ServerEnvironment.root + msg.arguments[0].Substring(2);
+                
+
+                CommMessage reply = createProcess(absDepAnalyzerPath, anlyzDir, msg);
+                return reply;
+            };
+            messageDispatcher["depAnalysis"] = depAnalysis;
+
         }
+
+        CommMessage createProcess(string fileName, string commandline, CommMessage msg)
+        {
+            Process proc = new Process();
+
+            proc.StartInfo.FileName = fileName;
+            proc.StartInfo.Arguments = commandline;
+            proc.EnableRaisingEvents = true;
+            //proc.Exited += (sender, e) => childExited(sender, e, msg);
+
+            Console.Write("\n  attempting to start {0}", fileName);
+            try
+            {
+                proc.Start();
+                proc.WaitForExit();
+
+                List<string> results = readResultFile();
+
+                CommMessage reply = new CommMessage(CommMessage.MessageType.reply);
+                reply.to = msg.from;
+                reply.from = msg.to;
+                reply.command = "depAnalysis";
+                reply.arguments = results;
+                return reply;
+            }
+            catch (Exception ex)
+            {
+                Console.Write("\n  {0}", ex.Message);
+                return null;
+            }
+        }
+
+        List<string> readResultFile()
+        {
+            string[] lines = System.IO.File.ReadAllLines(MessagePassingComm.ServerEnvironment.resultFilePath);
+            return lines.ToList<string>();
+        }
+
+        //void childExited(object sender, System.EventArgs e, CommMessage msg)
+        //{
+        //    Console.Write("\n  child process exited");
+
+        //    //CommMessage reply = new CommMessage(CommMessage.MessageType.reply);
+        //    //reply.to = msg.from;
+        //    //reply.from = msg.to;
+        //    //reply.command = "depAnalysis";
+        //    //reply.arguments = new List<string>{ "result"};
+
+        //    //reply.show();
+        //    //server.comm.postMessage(reply);
+        //}
+
+
         /*----< Server processing >------------------------------------*/
         /*
          * - all server processing is implemented with the simple loop, below,

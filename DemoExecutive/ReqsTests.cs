@@ -104,8 +104,8 @@ namespace DepAnalysis
 
 
             string[] args = new string[] { "../../../DemoExecutive/Test/" };
-            Executive.ShowCommandLine(args);
-            List<string> files = Executive.ProcessCommandline(args);
+            DemoExecutive.ShowCommandLine(args);
+            List<string> files = DemoExecutive.ProcessCommandline(args);
 
             foreach (string file in files)
             {
@@ -131,13 +131,13 @@ namespace DepAnalysis
 
 
             string[] args = new string[] { "../../../DemoExecutive/Test/" };
-            Executive.ShowCommandLine(args);
-            List<string> files = Executive.ProcessCommandline(args);
+            DemoExecutive.ShowCommandLine(args);
+            List<string> files = DemoExecutive.ProcessCommandline(args);
 
             Repository repo = new Repository();
             repo.semi = Factory.create();
 
-            Executive.BuildTypeTable(args, files, repo);
+            DemoExecutive.BuildTypeTable(args, files, repo);
 
             Display.showTypeTable(repo.typeTable);
             Console.WriteLine();
@@ -159,8 +159,8 @@ namespace DepAnalysis
             ReqDisplay.message("- In this program, Tarjan Algorithm is used to solve strong components.");
 
             string[] args = new string[] { "../../../DemoExecutive/Test/" };
-            Executive.ShowCommandLine(args);
-            List<string> files = Executive.ProcessCommandline(args);
+            DemoExecutive.ShowCommandLine(args);
+            List<string> files = DemoExecutive.ProcessCommandline(args);
 
             Repository repo = new Repository();
             repo.semi = Factory.create();
@@ -168,8 +168,8 @@ namespace DepAnalysis
             BuildTypeAnalyzer builder = new BuildTypeAnalyzer(repo);
             Parser parser = builder.build();
 
-            Executive.BuildTypeTable(args, files, repo);
-            Executive.depAnalysis(args, files, repo);
+            DemoExecutive.BuildTypeTable(args, files, repo);
+            DemoExecutive.depAnalysis(args, files, repo);
 
             Console.Write("\n\nDependency Analysis:");
             Display.showDependency(repo.depGraph);
@@ -235,16 +235,16 @@ namespace DepAnalysis
             ReqDisplay.title("Req #8 - An automated unit test suite");
             ReqDisplay.message(message);
             string[] args = new string[] { "../../../DemoExecutive/SpecialTestCases/" };
-            Executive.ShowCommandLine(args);
-            List<string> files = Executive.ProcessCommandline(args);
+            DemoExecutive.ShowCommandLine(args);
+            List<string> files = DemoExecutive.ProcessCommandline(args);
             Repository repo = new Repository();
             repo.semi = Factory.create();
-            Executive.BuildTypeTable(args, files, repo);
+            DemoExecutive.BuildTypeTable(args, files, repo);
             Display.showTypeTable(repo.typeTable);
             Console.WriteLine();
             Display.showAliasTable(repo.aliasTable);
             Console.WriteLine();
-            Executive.depAnalysis(args, files, repo);
+            DemoExecutive.depAnalysis(args, files, repo);
             Console.Write("\n\nDependency Analysis:");
             Display.showDependency(repo.depGraph);
             Console.Write("\n");
