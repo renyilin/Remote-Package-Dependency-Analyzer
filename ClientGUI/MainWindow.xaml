@@ -1,8 +1,8 @@
 ﻿<!-- 
     /////////////////////////////////////////////////////////////////////////
-    // NavigatorClient.xaml - Demonstrates Directory Navigation in WPF App //
-    // ver 2.0                                                             //
-    // Jim Fawcett, CSE681 - Software Modeling and Analysis, Fall 2017     //
+    // MainWindow.xaml                                                     //
+    // ver 1.0                                                             //
+    // Yilin Ren, CSE681 - Software Modeling and Analysis, Fall 2018       //
     /////////////////////////////////////////////////////////////////////////
     -->
 
@@ -102,7 +102,7 @@
             <!-- TabItem2: Options -->
             <TabItem Name="TabOptions" Header="Options" FontWeight="Bold" Padding="30,1,30,1">
                 <StackPanel Margin="10,10,10,10">
-                        <GroupBox Header="Analyzing Code Files" Height="70">
+                        <GroupBox Header="Analyzing Code Files" Height="80">
                             <Grid  Margin="10,10,10,0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
@@ -125,6 +125,9 @@
                                     <CheckBox Name="cb_SC" Content="Strong Componets Analysis" Margin="0,5,0,0" IsChecked="true"></CheckBox>
                                 </StackPanel>
                             </Grid>
+                        </GroupBox>
+                        <GroupBox Header="Automated Unit Test" Height="80" Margin="0,10,0,0">
+                            <Button Name="btnAutoTest" Content="Run Automated Test" Click="BtnAutoTest_Click" Margin="10,12,10,10" Padding="5" Background='AliceBlue' ></Button>
                         </GroupBox>
                         <!--<GroupBox Header="Result Output" Height="140" Margin="0,10,0,0">
                             <StackPanel Margin="10,10,10,0">

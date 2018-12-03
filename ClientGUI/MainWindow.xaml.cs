@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using MessagePassingComm;
+using System.Windows.Forms;
 
 namespace ClientGUI
 {
@@ -19,7 +20,7 @@ namespace ClientGUI
     {
         //static string initPath = MessagePassingComm.ServerEnvironment.root;
         ViewModel viewModel = new ViewModel(".");
-        Comm comm { get; set; } = null;
+        static Comm comm { get; set; } = null;
         Dictionary<string, Action<CommMessage>> messageDispatcher = new Dictionary<string, Action<CommMessage>>();
         Thread rcvThread = null;
 
@@ -37,7 +38,15 @@ namespace ClientGUI
             rcvThread.Start();
 
             getTopFiles();
-                        
+
+            //DialogResult result = System.Windows.Forms.MessageBox.Show("Would you like to run the automated unit test suite?", 
+            //    "Automated Unit Test", MessageBoxButtons.YesNo);
+
+            //if (result == System.Windows.Forms.DialogResult.Yes)
+            //{
+            //    Tester();
+            //}
+            
         }
 
         private void getTopFiles()
@@ -56,6 +65,24 @@ namespace ClientGUI
             CommMessage msg2 = msg1.clone();
             msg2.command = "moveIntoFolderFiles";
             comm.postMessage(msg2);
+        }
+
+        private void Tester()
+        {
+
+            Console.Write("\n\n  Demonstrating Remote Type-Based Package Dependency Analysis");
+            Console.Write("\n =============================================================\n");
+
+            ReqTest3 reqTest3 = new ReqTest3();
+            ReqTest456 reqTest456 = new ReqTest456();
+            ReqTest7 reqTest7 = new ReqTest7();
+
+            TestHarness.Tester tester = new TestHarness.Tester();
+            tester.add(reqTest3);
+            tester.add(reqTest456);
+            tester.add(reqTest7);
+
+            tester.execute();
         }
 
         void LoadNavigator(string path)
@@ -255,7 +282,7 @@ namespace ClientGUI
                 if (msg.command == null)
                     continue;
 
-                Dispatcher.Invoke(()=> tb_StatusBar.Text = "Connected. Double click on folders to open the folders.");
+                Dispatcher.Invoke(()=> tb_StatusBar.Text = "Double click on folders to open the folders.");
                 // pass the Dispatcher's action value to the main thread for execution
 
                 Dispatcher.Invoke(messageDispatcher[msg.command], new object[] { msg });
@@ -288,6 +315,21 @@ namespace ClientGUI
 
         }
 
+        public static void sendMSgforReqTest456(List<string> arguments)
+        {
+            CommMessage msg1 = new CommMessage(CommMessage.MessageType.request);
+            msg1.from = ClientEnvironment.endPoint;
+            msg1.to = ServerEnvironment.endPoint;
+            msg1.command = "depAnalysis";
+            msg1.arguments = arguments;
+            comm.postMessage(msg1);
 
+            msg1.show();
+        }
+
+        private void BtnAutoTest_Click(object sender, RoutedEventArgs e)
+        {
+            Tester();
+        }
     }
 }

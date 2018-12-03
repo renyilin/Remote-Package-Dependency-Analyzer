@@ -58,3 +58,8 @@ Z:\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\ClientGUI\Clien
 \\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\ClientGUI\bin\Debug\PluggableCommService.exe.config
 \\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\ClientGUI\bin\Debug\TestUtilities.pdb
 \\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\ClientGUI\bin\Debug\TestUtilities.exe.config
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\ClientGUI\bin\Debug\Navigate.dll
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\ClientGUI\bin\Debug\TestHarness.exe
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\ClientGUI\bin\Debug\Navigate.pdb
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\ClientGUI\bin\Debug\TestHarness.pdb
+\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\ClientGUI\bin\Debug\TestHarness.exe.config
