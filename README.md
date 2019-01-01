@@ -1,4 +1,4 @@
-#Remote Package Dependency Analyzer
+# Remote Package Dependency Analyzer
 ## About this Work
 This work is the final project of the course [CSE681 Software Modeling & Analysis](https://ecs.syr.edu/faculty/fawcett/handouts/webpages/CSE681.htm) (2018 Fall). The instructor of this course is [Prof. Jim Fawcett](https://ecs.syr.edu/faculty/fawcett/handouts/Webpages/fawcettHome.htm) who is a great professor. In this course, there are four related projects in total. And the final project combines all of these projects as a whole.
 
@@ -55,30 +55,33 @@ ITokenCollection interface is used to decouple Parser and Lexical Scanner so tha
 For this application, there are two kinds of parsers: **TypeAnalysis** and **DepAnalysis**. 
 
 * **TypeAnalysis** is a parser to find all the types defined in each of a collection of C# source files and store related information in the repository. It can detect all type definitions including classes, interface, delegate, structs, enums. It can handle aliases as well. Type information will be stored in Type Table and other related information will be stored in Using Table, Scope Stack, and Alias Table. 
-* **DepAnalysis** is responsible for finding all dependency files for each file in a specified collection. File A depends on file B, if and only if file A uses any type defined in file B. For example initializing an instance, calling a static method, inheriting a class and implement an interface, etc. DepAnalysis reads through the target source file to check if each possible type token is in the Using Table and Type Table. If it is and this type is defined in another file, then this dependency is found and will be recorded in the graph structure in which nodes are files and edges are dependency relations. If the possible type token is in the Alias Table, the original type name should be used for checking.
-
-  Category         |            Name       |        Namespaces     |       File Name
-  -----------------|            ----       |        ----------     |      --------
- interface         |              I1       |             [N4]      |  Interface1.cs
- interface         |              I2       |             [N5]      |  Interface2.cs
-     class         |              C1       |             [N1]      |        TC1.cs
-     class         |              C1       |             [N2]      |        TC3.cs
-      enum         |        WeekDays       |             [N1]      |        TC1.cs
-  delegate         |   PerformCalculation  |             [N1]      |        TC1.cs
-     class         |              C3       |             [N2]      |         TC2.cs
-     class         |              C2       |        [N2 : N3]      |         TC2.cs
-     class         |              C4       |             [N2]      |         TC3.cs
-     class         |              C5       |        [N2 : C4]      |         TC3.cs
-    struct         |          Office       |             [N2]      |        TC3.cs
-     class         |              C6       |             [N4]      |         TC4.cs
-<p align="center"> Table 1: Example of Type Table</p>
+* **DepAnalysis** is responsible for finding all dependency files for each file in a specified collection. File A depends on file B, if and only if file A uses any type defined in file B. For example initializing an instance, calling a static method, inheriting a class and implement an interface, etc. DepAnalysis reads through the target source file to check if each possible type token is in the Using Table and Type Table. If it is and this type is defined in another file, then this dependency is found and will be recorded in the graph structure in which nodes are files and edges are dependency relations. If the possible type token is in the Alias Table, the original type name should be used for checking. Table 1 and Table 2 show an example of Type Table and Alias Table.
 
 
- Alias Name        |        Original Name    |     File Name
- ----------        |       ----------        |       -----
-         A1        |            N2.N3        |      TC1.cs
-         A2        |            N4.C6        |      TC3.cs
-<p align="center"> Table 2: Example of Alias Table</p>
+|Category         |            Name       |        Namespaces     |    File Name   |
+|-----------------|-----------------------|-----------------------|----------------|
+|interface        |              I1       |             [N4]      |  Interface1.cs |
+|interface        |              I2       |             [N5]      |  Interface2.cs |
+|   class         |              C1       |             [N1]      |        TC1.cs  |
+|   class         |              C1       |             [N2]      |        TC3.cs  |
+|    enum         |        WeekDays       |             [N1]      |        TC1.cs  |
+|  delegate       |   PerformCalculation  |             [N1]      |        TC1.cs  |
+|   class         |              C3       |             [N2]      |         TC2.cs |
+|   class         |              C2       |        [N2 : N3]      |         TC2.cs |
+|   class         |              C4       |             [N2]      |         TC3.cs |
+|  class          |              C5       |        [N2 : C4]      |         TC3.cs |
+|  struct         |          Office       |             [N2]      |        TC3.cs  |
+|  class          |              C6       |             [N4]      |         TC4.cs |
+     
+Table 1: Example of Type Table for files in the directory [./ServerFiles/SpecialTestCases/](https://github.com/renyilin/Remote-Package-Dependency-Analyzer/tree/master/ServerFiles/SpecialTestCases)
+
+
+|  Alias Name       |        Original Name    |     File Name  |
+|-------------------|-------------------------|----------------|
+|         A1        |            N2.N3        |      TC1.cs    |
+|         A2        |            N4.C6        |      TC3.cs    |
+
+Table 2: Example of Alias Table for files in the directory [./ServerFiles/SpecialTestCases/](https://github.com/renyilin/Remote-Package-Dependency-Analyzer/tree/master/ServerFiles/SpecialTestCases)
 
 After the dependency graph built, **StrongComp** implements Tarjan Algorithm to find the largest set of files that are mutually dependent.
 
@@ -103,7 +106,7 @@ Client is responsible for sending request messages, receiving reply messages fro
 <p align="center"> Figure 6: Client GUI</p>
 
 ## Source Code
-This program is written in C# with .Net framework 4.6 using Visual Studio 2017. Here is the source code.
+This program is written in C# with .Net framework 4.6 using Visual Studio 2017. Here is the [source code](https://github.com/renyilin/Remote-Package-Dependency-Analyzer).
 
 Please run Visual Studio as Administrator. Set `DepAlyzServer` and `ClientGUI` as startup projects. Then rebuild the solution and start. 
 
