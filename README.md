@@ -97,7 +97,7 @@ We use a message dispatcher to handle messages, which can be implemented with a 
 
 Server provides the capability for calling Dependency Analyzer for analyzing a specified directory and replying results to the client. The repository of source code resides on the Server. So Server needs to reply the navigation requests from Client as well. The following figure Figure 5 is the activity diagram of Server.
 
-![ServerActivityDiagram](./img/server_activity_diagram.svg)
+<p align="center"><img src="./img/server_activity_diagram.svg" alt="ServerActivityDiagram" width="550" ></p>
 <p align="center"> Figure 5: State Diagram of Tokenizer</p>
 
 Client is responsible for sending request messages, receiving reply messages from Server, navigating files on Server and displaying results from Server. Figure 6 below is screenshots of the Client GUI. 
