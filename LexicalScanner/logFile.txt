@@ -1,0 +1,49 @@
+
+                                      CodeAnalysis - Version 1.8
+    ==============================================================================================
+     Tue Oct 30 19:05:46 2018
+     Path: "Z:\Documents\Course\CES681\MyHomework\Project2\LexicalScanner\LexicalScanner"
+     Args: RequirementDemo.cs, /v, /m, /r, /f, /p
+                                                                               
+           Code Metrics - Start Line, Size (lines/code), and Complexity (number of scopes)
+    ==============================================================================================
+
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+                             namespace                   Global Namespace       1       1      68
+
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+        RequirementDemo.cs   namespace                     LexicalScanner      45     518      67
+        RequirementDemo.cs       class                      ExtendMethods      55      28       5
+        RequirementDemo.cs    function                    createSeparator      59      10       2
+        RequirementDemo.cs    function                 addFrontWhitespace      73       7       2
+        RequirementDemo.cs       class                    RequirementDemo      90     473      61
+        RequirementDemo.cs    function                           req3Demo     105      15       2
+        RequirementDemo.cs    function                           req4Demo     126      36      10
+        RequirementDemo.cs    function                           req5Demo     168      27       1
+        RequirementDemo.cs    function                           req6Demo     201      17       1
+        RequirementDemo.cs    function                           req7Demo     224      28       6
+        RequirementDemo.cs    function                           req8Demo     258      13       4
+        RequirementDemo.cs    function                           SemiDemo     268       1       1
+        RequirementDemo.cs    function                           req9Demo     277      14       1
+        RequirementDemo.cs    function                          req10Demo     297      15       1
+        RequirementDemo.cs    function                          BonusDemo     318      31       5
+        RequirementDemo.cs    function                   readLineFromFile     353       7       2
+        RequirementDemo.cs    function                          TokenDemo     364      22       3
+        RequirementDemo.cs    function                    testTokerString     390      21       4
+        RequirementDemo.cs    function                           SemiDemo     415      38       6
+        RequirementDemo.cs    function                     testSemiString     457      16       3
+        RequirementDemo.cs    function                          testToker     477      29       5
+        RequirementDemo.cs    function                 testSemiExpression     510      26       4
+        RequirementDemo.cs    function                               Main     541      19       1
+
+                          Functions Exceeding Metric Limits and Public Data
+    ==============================================================================================
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+
+
+
+    searched    13 dirs
+   processed     1 files

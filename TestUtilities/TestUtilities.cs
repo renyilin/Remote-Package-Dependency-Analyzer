@@ -163,7 +163,7 @@ namespace MessagePassingComm
       Func<bool> failTest = () => { Console.Write("\n  fail test"); return false; };
       checkResult(handleInvoke(failTest), "TestUtilities.handleInvoke");
 
-      Func<bool> throwTest = () => { Console.Write("\n  throw test"); throw new Exception(); return false; };
+      Func<bool> throwTest = () => { Console.Write("\n  throw test"); throw new Exception(); };
       checkResult(handleInvoke(throwTest), "TestUtilities.handleInvoke");
 
       

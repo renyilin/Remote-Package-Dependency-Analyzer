@@ -1,27 +1,29 @@
 
-                                      CodeAnalysis - Version 1.4
+                                      CodeAnalysis - Version 1.8
     ==============================================================================================
-     Thu Jun  8 16:36:39 2017
-     Path: "C:\Users\jimfa\Desktop\PluggableRepo\TestUtilities"
-     Args: *.h, *.cpp, *.cs, /m, /r, /f
+     Mon Dec  3 18:17:51 2018
+     Path: "C:\Users\ryl\source\repos\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\TestUtilities"
+     Args: TestUtilities.cs, /v, /m, /r, /f, /p
                                                                                
            Code Metrics - Start Line, Size (lines/code), and Complexity (number of scopes)
     ==============================================================================================
 
                  file name        type                               name    line    size    cplx
     -----------------------  ----------  ---------------------------------  ------  ------  ------
-                             namespace                   Global Namespace       1       1      17
+                             namespace                   Global Namespace       1       1      22
 
                  file name        type                               name    line    size    cplx
     -----------------------  ----------  ---------------------------------  ------  ------  ------
-          TestUtilities.cs   namespace                PluggableRepository      29      94      16
-          TestUtilities.cs       class                      TestUtilities      31      92      15
-          TestUtilities.cs    function                        checkResult      35       8       1
-          TestUtilities.cs    function                          checkNull      46      10       2
-          TestUtilities.cs    function                       handleInvoke      65      16       4
-          TestUtilities.cs    function                              title      84       4       1
-          TestUtilities.cs    function                            putLine      91       9       2
-          TestUtilities.cs    function                               Main     106      15       4
+          TestUtilities.cs   namespace                 MessagePassingComm      38     137      21
+          TestUtilities.cs       class                      TestUtilities      40     135      20
+          TestUtilities.cs    function                        checkResult      44       8       1
+          TestUtilities.cs    function                          checkNull      55      10       2
+          TestUtilities.cs    function                       handleInvoke      74      16       4
+          TestUtilities.cs    function                              title      93       4       1
+          TestUtilities.cs    function                            vbtitle     100       7       2
+          TestUtilities.cs    function                            putLine     110       9       2
+          TestUtilities.cs    function                   MakeRelativePath     131      19       3
+          TestUtilities.cs    function                               Main     156      17       4
 
                           Functions Exceeding Metric Limits and Public Data
     ==============================================================================================
@@ -30,5 +32,5 @@
 
 
 
-    searched     8 dirs
-   processed     5 files
+    searched     7 dirs
+   processed     1 files

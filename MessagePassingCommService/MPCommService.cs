@@ -320,7 +320,7 @@ namespace MessagePassingComm
         if (factory != null)
           factory.Close();
       }
-      catch(Exception ex)
+      catch
       {
         Console.Write("\n  already closed");
       }
@@ -584,126 +584,140 @@ namespace MessagePassingComm
       TestUtilities.putLine("last message received\n");
       return test;
     }
-    /*----< test Comm instance >-----------------------------------*/
-    /*
-     * - Note: change every occurance of string "Odin" to your machine name
-     * 
-     */
-    public static bool testComm()
+
+    public static bool testComm1(Comm comm, CommMessage csndMsg, bool test)
     {
-      TestUtilities.vbtitle("testing Comm");
-      bool test = true;
+        comm.postMessage(csndMsg);
+        CommMessage crcvMsg = comm.getMessage();
+        if (ClientEnvironment.verbose)
+            crcvMsg.show();
+        if (!compareMsgs(csndMsg, crcvMsg))
+            test = false;
+        TestUtilities.checkResult(test, "csndMsg equals crcvMsg");
+        TestUtilities.putLine(comm.size().ToString() + " messages left in queue");
+        TestUtilities.putLine();
 
-      Comm comm = new Comm("http://localhost", 8081);
-      CommMessage csndMsg = new CommMessage(CommMessage.MessageType.request);
-
-      csndMsg.command = "show";
-      csndMsg.author = "Jim Fawcett";
-      string localEndPoint = "http://localhost:8081/IMessagePassingComm";
-      csndMsg.to = localEndPoint;
-      csndMsg.from = localEndPoint;
-
-      comm.postMessage(csndMsg);
-      CommMessage crcvMsg = comm.getMessage();
-      if (ClientEnvironment.verbose)
-        crcvMsg.show();
-      if (!compareMsgs(csndMsg, crcvMsg))
-        test = false;
-      TestUtilities.checkResult(test, "csndMsg equals crcvMsg");
-      TestUtilities.putLine(comm.size().ToString() + " messages left in queue");
-      TestUtilities.putLine();
-
-      TestUtilities.vbtitle("testing connect to new EndPoint");
-      csndMsg.to = "http://DESKTOP-J98AUHN:8081/IMessagePassingComm";
-      comm.postMessage(csndMsg);
-      crcvMsg = comm.getMessage();
-      if (ClientEnvironment.verbose)
-        crcvMsg.show();
-      if (!compareMsgs(csndMsg, crcvMsg))
-        test = false;
-      TestUtilities.checkResult(test, "csndMsg equals crcvMsg");
-      TestUtilities.putLine(comm.size().ToString() + " messages left in queue");
-      TestUtilities.putLine();
-
-      TestUtilities.vbtitle("testing file transfer");
-
-      bool testFileTransfer = true;
-
-      List<string> names = getClientFileList();
-      foreach (string name in names)
-      {
-        TestUtilities.putLine(string.Format("transferring file \"{0}\"", name));
-        bool transferSuccess = comm.postFile(name);
-        TestUtilities.checkResult(transferSuccess, "transfer");
-      }
-
-      foreach (string name in names)
-      {
-        if (!compareFileBytes(name))
-        {
-          testFileTransfer = false;
-          break;
-        }
-      }
-      TestUtilities.checkResult(testFileTransfer, "file transfers");
-      TestUtilities.putLine(comm.size().ToString() + " messages left in queue");
-      TestUtilities.putLine();
-
-      TestUtilities.vbtitle("test closeConnection then postMessage");
-      comm.closeConnection();
-      CommMessage newMsg = new CommMessage(CommMessage.MessageType.request);
-      newMsg.to = localEndPoint;
-      newMsg.from = localEndPoint;
-      comm.postMessage(newMsg);
-      CommMessage reply = comm.getMessage();
-      reply.show();
-      // if we get here, test passed
-      TestUtilities.checkResult(true, "closeSenderConnenction then PostMessage");
-      TestUtilities.putLine(comm.size().ToString() + " messages left in queue");
-      TestUtilities.putLine();
-
-      TestUtilities.vbtitle("test receiver close");
-      csndMsg.type = CommMessage.MessageType.closeReceiver;
-      if(ClientEnvironment.verbose)
-        csndMsg.show();
-      comm.postMessage(csndMsg);
-      crcvMsg = comm.getMessage();
-      if (ClientEnvironment.verbose)
-        crcvMsg.show();
-      if (!compareMsgs(csndMsg, crcvMsg))
-        test = false;
-      TestUtilities.checkResult(test, "closeReceiver");
-      TestUtilities.putLine(comm.size().ToString() + " messages left in queue");
-      TestUtilities.putLine();
-
-      csndMsg.type = CommMessage.MessageType.closeSender;
-      comm.postMessage(csndMsg);
-      if(ClientEnvironment.verbose)
-        csndMsg.show();
-      TestUtilities.putLine(comm.size().ToString() + " messages left in queue");
-      // comm.getMessage() would fail because server has shut down
-      // no rcvMsg so no compare
-
-      TestUtilities.putLine("last message received\n");
-
-      TestUtilities.putLine("Test comm.restart on same port - expected to fail");
-
-      if (comm.restart(8081))
-      {
-        CommMessage newerMsg = new CommMessage(CommMessage.MessageType.request);
-        newerMsg.to = ClientEnvironment.endPoint;
-        newerMsg.from = ClientEnvironment.endPoint;
-        comm.postMessage(newerMsg);
-        CommMessage newReply = comm.getMessage();
-        newReply.show();
-      }
-      else
-      {
-        Console.Write("\n  can't restart but won't fail test");
-      }
-
-      return test && testFileTransfer;
+        TestUtilities.vbtitle("testing connect to new EndPoint");
+        csndMsg.to = "http://DESKTOP-J98AUHN:8081/IMessagePassingComm";
+        comm.postMessage(csndMsg);
+        crcvMsg = comm.getMessage();
+        if (ClientEnvironment.verbose)
+            crcvMsg.show();
+        if (!compareMsgs(csndMsg, crcvMsg))
+            test = false;
+        TestUtilities.checkResult(test, "csndMsg equals crcvMsg");
+        TestUtilities.putLine(comm.size().ToString() + " messages left in queue");
+        TestUtilities.putLine();
+        return test;
     }
+
+    public static bool testComm2(Comm comm, CommMessage csndMsg, bool test)
+    {
+        string localEndPoint = "http://localhost:8081/IMessagePassingComm";
+        TestUtilities.vbtitle("testing file transfer");
+
+        bool testFileTransfer = true;
+
+        List<string> names = getClientFileList();
+        foreach (string name in names)
+        {
+            TestUtilities.putLine(string.Format("transferring file \"{0}\"", name));
+            bool transferSuccess = comm.postFile(name);
+            TestUtilities.checkResult(transferSuccess, "transfer");
+        }
+
+        foreach (string name in names)
+        {
+            if (!compareFileBytes(name))
+            {
+                testFileTransfer = false;
+                break;
+            }
+        }
+        TestUtilities.checkResult(testFileTransfer, "file transfers");
+        TestUtilities.putLine(comm.size().ToString() + " messages left in queue");
+        TestUtilities.putLine();
+
+        TestUtilities.vbtitle("test closeConnection then postMessage");
+        comm.closeConnection();
+        CommMessage newMsg = new CommMessage(CommMessage.MessageType.request);
+        newMsg.to = localEndPoint;
+        newMsg.from = localEndPoint;
+        comm.postMessage(newMsg);
+        CommMessage reply = comm.getMessage();
+        reply.show();
+        // if we get here, test passed
+        TestUtilities.checkResult(true, "closeSenderConnenction then PostMessage");
+        TestUtilities.putLine(comm.size().ToString() + " messages left in queue");
+        TestUtilities.putLine();
+        return testFileTransfer;
+     }
+
+        public static bool testComm3(Comm comm, CommMessage csndMsg, bool test)
+        {
+            TestUtilities.vbtitle("test receiver close");
+            csndMsg.type = CommMessage.MessageType.closeReceiver;
+            if (ClientEnvironment.verbose)
+                csndMsg.show();
+            comm.postMessage(csndMsg);
+            CommMessage crcvMsg = comm.getMessage();
+            if (ClientEnvironment.verbose)
+                crcvMsg.show();
+            if (!compareMsgs(csndMsg, crcvMsg))
+                test = false;
+            TestUtilities.checkResult(test, "closeReceiver");
+            TestUtilities.putLine(comm.size().ToString() + " messages left in queue");
+            TestUtilities.putLine();
+
+            csndMsg.type = CommMessage.MessageType.closeSender;
+            comm.postMessage(csndMsg);
+            if (ClientEnvironment.verbose)
+                csndMsg.show();
+            TestUtilities.putLine(comm.size().ToString() + " messages left in queue");
+            // comm.getMessage() would fail because server has shut down
+            // no rcvMsg so no compare
+            TestUtilities.putLine("last message received\n");
+            TestUtilities.putLine("Test comm.restart on same port - expected to fail");
+            if (comm.restart(8081))
+            {
+                CommMessage newerMsg = new CommMessage(CommMessage.MessageType.request);
+                newerMsg.to = ClientEnvironment.endPoint;
+                newerMsg.from = ClientEnvironment.endPoint;
+                comm.postMessage(newerMsg);
+                CommMessage newReply = comm.getMessage();
+                newReply.show();
+            }
+            else
+            {
+                Console.Write("\n  can't restart but won't fail test");
+            }
+            return test;
+        }
+            /*----< test Comm instance >-----------------------------------*/
+            /*
+             * - Note: change every occurance of string "Odin" to your machine name
+             * 
+             */
+        public static bool testComm()
+        {
+            TestUtilities.vbtitle("testing Comm");
+            bool test = true;
+
+            Comm comm = new Comm("http://localhost", 8081);
+            CommMessage csndMsg = new CommMessage(CommMessage.MessageType.request);
+
+            csndMsg.command = "show";
+            csndMsg.author = "Jim Fawcett";
+            string localEndPoint = "http://localhost:8081/IMessagePassingComm";
+            csndMsg.to = localEndPoint;
+            csndMsg.from = localEndPoint;
+
+            test = testComm1(comm, csndMsg, test);
+            bool testFileTransfer = testComm2(comm, csndMsg, test);
+            test = testComm3(comm, csndMsg, test);
+
+            return test && testFileTransfer;
+        }
     /*----< do the tests >-----------------------------------------*/
 
     static void Main(string[] args)

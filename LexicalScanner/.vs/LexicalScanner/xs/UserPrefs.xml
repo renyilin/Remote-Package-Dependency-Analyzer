@@ -1,0 +1,21 @@
+﻿<Properties StartupConfiguration="{347D330A-65B4-4441-9AB2-2D14FA1DE88E}|Default">
+  <MonoDevelop.Ide.ItemProperties.LexicalScanner PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="TokenFileSource.cs">
+    <Files>
+      <File FileName="TokenFileSource.cs" Line="127" Column="9" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../../../../../../Demo/StatePattern_Toker_Demo/Toker/Toker.cs" line="322" offsetX="397" offsetY="6420" expression="ch" liveUpdate="False" />
+    <Watch file="../../../../../../../Demo/CsLexicalScanner/Tokenizer/Toker.cs" line="591" offsetX="377" offsetY="9860" expression="tokBuffer" liveUpdate="False" />
+    <Watch file="../../../../../../../Demo/CsLexicalScanner/Tokenizer/Toker.cs" line="208" offsetX="339" offsetY="2200" expression="i" liveUpdate="False" />
+    <Watch file="../../../../../../../Demo/CsLexicalScanner/Tokenizer/Toker.cs" line="244" offsetX="464" offsetY="2920" expression="lineRemainder" liveUpdate="False" />
+    <Watch file="../../../../../../../Demo/CsLexicalScanner/Tokenizer/Toker.cs" line="542" offsetX="483" offsetY="8880" expression="toks" liveUpdate="False" />
+    <Watch file="../../../../../../../Demo/CsLexicalScanner/Tokenizer/Toker.cs" line="662" offsetX="435" offsetY="11280" expression="msg" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MultiItemStartupConfigurations />
+</Properties>

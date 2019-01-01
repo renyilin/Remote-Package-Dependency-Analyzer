@@ -1,0 +1,39 @@
+
+                                      CodeAnalysis - Version 1.8
+    ==============================================================================================
+     Mon Dec  3 18:07:22 2018
+     Path: "C:\Users\ryl\source\repos\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\Environment"
+     Args: Environment.cs, /v, /m, /r, /f, /p
+                                                                               
+           Code Metrics - Start Line, Size (lines/code), and Complexity (number of scopes)
+    ==============================================================================================
+
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+                             namespace                   Global Namespace       1       1      22
+
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+            Environment.cs   namespace                 MessagePassingComm      28      39      21
+            Environment.cs      struct                        Environment      32       9       6
+              public data: public const long blockSize = 1024 ; 
+            Environment.cs      struct                  ClientEnvironment      44       9       6
+              public data: public const long blockSize = 1024 ; 
+            Environment.cs      struct                  ServerEnvironment      56      11       8
+              public data: public const long blockSize = 1024 ; 
+
+                          Functions Exceeding Metric Limits and Public Data
+    ==============================================================================================
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+
+              public data: Environment.cs : 34 - struct Environment
+                public const long blockSize = 1024 ; 
+              public data: Environment.cs : 46 - struct ClientEnvironment
+                public const long blockSize = 1024 ; 
+              public data: Environment.cs : 58 - struct ServerEnvironment
+                public const long blockSize = 1024 ; 
+
+
+    searched     7 dirs
+   processed     1 files

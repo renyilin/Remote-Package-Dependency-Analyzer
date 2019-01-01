@@ -1,4 +1,36 @@
-﻿using System;
+﻿/////////////////////////////////////////////////////////////////////
+// MainWindow.xaml.cs - GUI for the client of the remote           //
+//                      type-based dependency analysis             //
+//                                                                 //
+// ver 1.0                                                         //
+// Yilin Ren, CSE681, Fall 2018                                    //
+/////////////////////////////////////////////////////////////////////
+/*
+ * This package provides:
+ * ----------------------
+ * This package is GUI for the client of the remote type-based dependency
+ * analysis. It has three main tabs including Execution, Options, and Results.
+ * Execution tab is used for selecting a directory for analysis and clicking 
+ * Analyze button. Options tab is responsible for providing some operation
+ * options. Results tab is for displaying results.
+ * 
+ * Required Files:f
+ * ---------------
+ * ClientViewModel.cs
+ * ReqTests.cs
+ * Environment.cs
+ * IMessagePassingCommService.cs
+ * TestHarness.cs
+ * MessagePassingCommService.cs
+ * 
+ * Maintenance History:
+ * --------------------
+ * ver 1.0 : 3 Dec 2018
+ * - first release
+ */
+
+
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
@@ -16,20 +48,20 @@ namespace ClientGUI
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ClientMainWindow : Window
     {
-        //static string initPath = MessagePassingComm.ServerEnvironment.root;
         ViewModel viewModel = new ViewModel(".");
         static Comm comm { get; set; } = null;
         Dictionary<string, Action<CommMessage>> messageDispatcher = new Dictionary<string, Action<CommMessage>>();
         Thread rcvThread = null;
 
-        public MainWindow()
+        //-------< Constructor >----------------------------------------
+        public ClientMainWindow()
         {
             InitializeComponent();
             folderTree.DataContext = viewModel;
 
-            Console.Title = "Navigator Client";
+            Console.Title = "Client";
             Console.ForegroundColor = ConsoleColor.Yellow;
 
             comm = new Comm(ClientEnvironment.address, ClientEnvironment.port);
@@ -37,18 +69,10 @@ namespace ClientGUI
             rcvThread = new Thread(rcvThreadProc);
             rcvThread.Start();
 
-            getTopFiles();
-
-            //DialogResult result = System.Windows.Forms.MessageBox.Show("Would you like to run the automated unit test suite?", 
-            //    "Automated Unit Test", MessageBoxButtons.YesNo);
-
-            //if (result == System.Windows.Forms.DialogResult.Yes)
-            //{
-            //    Tester();
-            //}
-            
+            getTopFiles();         
         }
 
+        //-------< send requests to get the files and folders in the root >----------------
         private void getTopFiles()
         {
             tb_StatusBar.Text = "Connecting...";
@@ -67,9 +91,9 @@ namespace ClientGUI
             comm.postMessage(msg2);
         }
 
+        //-----------< start an automated unit test >--------------------------------------------
         private void Tester()
         {
-
             Console.Write("\n\n  Demonstrating Remote Type-Based Package Dependency Analysis");
             Console.Write("\n =============================================================\n");
 
@@ -85,60 +109,18 @@ namespace ClientGUI
             tester.execute();
         }
 
-        void LoadNavigator(string path)
-        {
-            ObservableCollection<IFileType> currentFolder;
-            if (viewModel.FolderDict.ContainsKey(path))
-            {
-                currentFolder = viewModel.FolderDict[path];
-                currentFolder.Clear();
-            }
-            else
-                return;
-
-            string[] dirs = System.IO.Directory.GetDirectories(path);
-            foreach (string dir in dirs)
-            {
-                System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(dir);
-                string fullPath = System.IO.Path.Combine(path, di.Name);
-
-                string fromPath = System.IO.Path.GetFullPath(MessagePassingComm.ServerEnvironment.root);
-                string toPath = System.IO.Path.GetFullPath(fullPath);
-                string relativePath = ".\\" + TestUtilities.MakeRelativePath(fromPath, toPath);
-
-                //Folder newFolder = new Folder { FLabel = di.Name, FullPath = fullPath };
-                Folder newFolder = new Folder { FLabel = di.Name, FullPath = relativePath };
-                currentFolder.Add(newFolder);
-
-                viewModel.FolderDict[newFolder.FullPath] = newFolder.Children;
-            }
-
-            string[] files = System.IO.Directory.GetFiles(path);
-            foreach (string file in files)
-            {
-                string name = System.IO.Path.GetFileName(file);
-                string fullPath = System.IO.Path.Combine(path, name);
-                currentFolder.Add(new File { FLabel = name, FullPath = fullPath });
-            }
-
-        }
-
+        //-----------< get the ancestor of the path >--------------------------------------------
         string getAncestor(int n, string path)
         {
             for (int i = 0; i < n; ++i)
             {
-                //int startIndex = path.LastIndexOf('/') + 1;
-                //int length = path.LastIndexOf('\\') - path.LastIndexOf('/');
-
                 int length = path.LastIndexOf('\\');
                 path = path.Substring(0, length);
-                //string toPath = System.IO.Directory.GetParent(path).FullName + '\\';
-                //string fromPath = System.IO.Path.GetFullPath(MessagePassingComm.ServerEnvironment.root);
-                //path = TestUtilities.MakeRelativePath(fromPath, toPath);
             }
             return path;
         }
 
+        //-----< change analysis path displayed in text block when select items changed in tree view>-----------
         private void FolderTree_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
             IFileType fileType = (IFileType)folderTree.SelectedItem;
@@ -158,6 +140,7 @@ namespace ClientGUI
             }
         }
 
+        //------< double click on folders to load child folders >------------------------------
         private void FolderTree_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             if (folderTree.SelectedItem == null)
@@ -174,43 +157,20 @@ namespace ClientGUI
                 msg1.from = ClientEnvironment.endPoint;
                 msg1.to = ServerEnvironment.endPoint;
                 msg1.command = "moveIntoFolderDirs";
-                msg1.arguments.Add(tbkPath.Text);//fileType.FullPath);
+                msg1.arguments.Add(tbkPath.Text);
                 comm.postMessage(msg1);
                 CommMessage msg2 = msg1.clone();
                 msg2.command = "moveIntoFolderFiles";
                 comm.postMessage(msg2);
-
-                //LoadNavigator(fileType.FullPath);
             }
-
-
+        
         }
 
+
+
+        //------< initialize Message Dispatcher >-----------------------------------------------
         void initializeMessageDispatcher()
         {
-            // load remoteFiles listbox with files from root
-
-            //messageDispatcher["getTopFiles"] = (CommMessage msg) =>
-            //{
-            //    remoteFiles.Items.Clear();
-            //    foreach (string file in msg.arguments)
-            //    {
-            //        remoteFiles.Items.Add(file);
-            //    }
-            //};
-            //// load remoteDirs listbox with dirs from root
-
-            //messageDispatcher["getTopDirs"] = (CommMessage msg) =>
-            //{
-            //    remoteDirs.Items.Clear();
-            //    foreach (string dir in msg.arguments)
-            //    {
-            //        remoteDirs.Items.Add(dir);
-            //    }
-            //};
-
-            // load remoteFiles listbox with files from folder
-
             messageDispatcher["moveIntoFolderFiles"] = (CommMessage msg) =>
             {
                 if (msg.arguments.Count != 0)
@@ -219,18 +179,14 @@ namespace ClientGUI
                     ObservableCollection<IFileType> currentFolder = viewModel.FolderDict[path];
                     //Remove all files in the current directory. 
                     currentFolder.Where(l => l.FileType == FileTypeCal.File).ToList().All(i => currentFolder.Remove(i));
-
                     foreach (string file in msg.arguments)
                     {
                         string name = System.IO.Path.GetFileName(file);
-                        //string fullPath = System.IO.Path.Combine(path, name);
-                        currentFolder.Add(new File { FLabel = name, FullPath = file });
+                        currentFolder.Add(new File(name, file));
                     }
                 }
             };
-
             //// load remoteDirs listbox with dirs from folder
-
             messageDispatcher["moveIntoFolderDirs"] = (CommMessage msg) =>
             {
                 if (msg.arguments.Count != 0)
@@ -239,21 +195,16 @@ namespace ClientGUI
                     ObservableCollection<IFileType> currentFolder = viewModel.FolderDict[path];
                     //Remove all Dirs in the current directory. 
                     currentFolder.Where(l => l.FileType == FileTypeCal.Folder).ToList().All(i => currentFolder.Remove(i));
-
                     foreach (string dir in msg.arguments)
                     {
                         System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(dir);
-
-                        Folder newFolder = new Folder { FLabel = di.Name, FullPath = dir };
+                        Folder newFolder = new Folder(di.Name, dir);
                         currentFolder.Add(newFolder);
-
                         viewModel.FolderDict[newFolder.FullPath] = newFolder.Children;
                     }
                 }
             };
-
             //// Execute dependency analyzsis
-
             messageDispatcher["depAnalysis"] = (CommMessage msg) =>
             {
                 StringBuilder stringBuilder = new StringBuilder();
@@ -264,14 +215,11 @@ namespace ClientGUI
                     tb_results.AppendText("\n");   
                 }
                 btnExecute.IsEnabled = true;
-                //MessageBox.Show("Dependency analysis completed. Please view results in \"Results\" tab.", "Information");//,MessageBoxButton.OK,MessageBoxImage.Information);
                 TabControl.SelectedItem = TabResults;
             };
-
         }
 
-        //----< define processing for GUI's receive thread >-------------
-
+        //----< define processing for GUI's receive thread >-------------------
         void rcvThreadProc()
         {
             Console.Write("\n  starting client's receive thread");
@@ -282,23 +230,31 @@ namespace ClientGUI
                 if (msg.command == null)
                     continue;
 
-                Dispatcher.Invoke(()=> tb_StatusBar.Text = "Double click on folders to open the folders.");
+                Dispatcher.Invoke(()=> tb_StatusBar.Text = "Double click on folders to open.");
                 // pass the Dispatcher's action value to the main thread for execution
 
                 Dispatcher.Invoke(messageDispatcher[msg.command], new object[] { msg });
             }
         }
 
+
+        //----< close Comm when window closed >--------------------------------
         private void Window_Closed(object sender, EventArgs e)
         {
             comm.close();
+
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
+           
         }
 
+        //----< click refresh button >------------------------------------------
         private void Refresh_Click(object sender, RoutedEventArgs e)
         {
             getTopFiles();
         }
 
+        //----< click executive button >----------------------------------------
+        //- send request to the server for running the dependency analyzer 
         private void BtnExecute_Click(object sender, RoutedEventArgs e)
         {
             btnExecute.IsEnabled = false;
@@ -312,9 +268,9 @@ namespace ClientGUI
             string path = tbkPath.Text;
             msg1.arguments = new List<string> { path, optionDA, optionSC, optionFileRecursion };
             comm.postMessage(msg1);
-
         }
 
+        //----< send request message for the automated unit test >------------------------------
         public static void sendMSgforReqTest456(List<string> arguments)
         {
             CommMessage msg1 = new CommMessage(CommMessage.MessageType.request);
@@ -327,9 +283,28 @@ namespace ClientGUI
             msg1.show();
         }
 
+        //-----< start the automated unit test >-------------------------------------------------
         private void BtnAutoTest_Click(object sender, RoutedEventArgs e)
         {
             Tester();
+            System.Windows.Forms.MessageBox.Show("The demonstration of requirements displays in the Client console." +
+                "\nThe results display in the Results tab in the GUI.", "Automated Unit Test",0,MessageBoxIcon.Information);
+        }
+
+        private void TabControl_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            if (TabExecution.IsSelected)
+            {
+                tb_StatusBar.Text = "Double click on folders to open.";
+            }
+            if (TabOptions.IsSelected)
+            {
+                tb_StatusBar.Text = "";
+            }
+            if (TabResults.IsSelected)
+            {
+                tb_StatusBar.Text = "";
+            }
         }
     }
 }

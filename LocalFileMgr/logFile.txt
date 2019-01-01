@@ -1,0 +1,37 @@
+
+                                      CodeAnalysis - Version 1.8
+    ==============================================================================================
+     Mon Dec  3 18:08:04 2018
+     Path: "C:\Users\ryl\source\repos\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\LocalFileMgr"
+     Args: LocalFileMgr.cs, /v, /m, /r, /f, /p
+                                                                               
+           Code Metrics - Start Line, Size (lines/code), and Complexity (number of scopes)
+    ==============================================================================================
+
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+                             namespace                   Global Namespace       1       1      19
+
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+           LocalFileMgr.cs   namespace                            FileMgr      29      86      18
+           LocalFileMgr.cs   interface                           IFileMgr      36       7       3
+           LocalFileMgr.cs       class                     FileMgrFactory      45      10       2
+           LocalFileMgr.cs    function                             create      47       6       1
+           LocalFileMgr.cs       class                       LocalFileMgr      59      49       9
+           LocalFileMgr.cs    function                       LocalFileMgr      64       3       1
+           LocalFileMgr.cs    function                           getFiles      70      12       2
+           LocalFileMgr.cs    function                            getDirs      85      12       2
+           LocalFileMgr.cs    function                             setDir     100       6       1
+           LocalFileMgr.cs       class                        TestFileMgr     109       6       2
+           LocalFileMgr.cs    function                               Main     111       2       1
+
+                          Functions Exceeding Metric Limits and Public Data
+    ==============================================================================================
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+
+
+
+    searched     8 dirs
+   processed     1 files

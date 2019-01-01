@@ -42,3 +42,14 @@ Z:\Documents\Course\CES681\MyHomework\Project3\PkgDpdAnalysis\SemiExp\obj\Debug\
 \\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\SemiExp\obj\Debug\SemiExp.csproj.CopyComplete
 \\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\SemiExp\obj\Debug\SemiExp.dll
 \\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\SemiExp\obj\Debug\SemiExp.pdb
+C:\Users\ryl\source\repos\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\SemiExp\bin\Debug\SemiExp.dll.config
+C:\Users\ryl\source\repos\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\SemiExp\bin\Debug\SemiExp.dll
+C:\Users\ryl\source\repos\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\SemiExp\bin\Debug\SemiExp.pdb
+C:\Users\ryl\source\repos\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\SemiExp\bin\Debug\Toker.dll
+C:\Users\ryl\source\repos\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\SemiExp\bin\Debug\Toker.pdb
+C:\Users\ryl\source\repos\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\SemiExp\bin\Debug\Toker.dll.config
+C:\Users\ryl\source\repos\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\SemiExp\obj\Debug\SemiExp.csprojAssemblyReference.cache
+C:\Users\ryl\source\repos\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\SemiExp\obj\Debug\SemiExp.csproj.CoreCompileInputs.cache
+C:\Users\ryl\source\repos\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\SemiExp\obj\Debug\SemiExp.csproj.CopyComplete
+C:\Users\ryl\source\repos\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\SemiExp\obj\Debug\SemiExp.dll
+C:\Users\ryl\source\repos\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\SemiExp\obj\Debug\SemiExp.pdb

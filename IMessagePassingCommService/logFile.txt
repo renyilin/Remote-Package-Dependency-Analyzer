@@ -1,0 +1,32 @@
+
+                                      CodeAnalysis - Version 1.8
+    ==============================================================================================
+     Mon Dec  3 18:07:55 2018
+     Path: "C:\Users\ryl\source\repos\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\IMessagePassingCommService"
+     Args: IMPCommService.cs, /v, /m, /r, /f, /p
+                                                                               
+           Code Metrics - Start Line, Size (lines/code), and Complexity (number of scopes)
+    ==============================================================================================
+
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+                             namespace                   Global Namespace       1       1      16
+
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+         IMPCommService.cs   namespace                 MessagePassingComm      43     109      15
+         IMPCommService.cs   interface                IMessagePassingComm      51      20       1
+         IMPCommService.cs       class                        CommMessage      74      78      13
+         IMPCommService.cs    function                        CommMessage      92       3       1
+         IMPCommService.cs    function                               show     122      15       1
+         IMPCommService.cs    function                              clone     139      11       1
+
+                          Functions Exceeding Metric Limits and Public Data
+    ==============================================================================================
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+
+
+
+    searched     7 dirs
+   processed     1 files

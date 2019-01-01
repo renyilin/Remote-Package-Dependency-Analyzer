@@ -45,6 +45,8 @@ namespace DepAnalysis
     using ScopeList = List<string>;
     using TypeName = String;
 
+    ///////////////////////////////////////////////////////////////////
+    // Type Element
     public class TypeElement
     {
         public string type { get; set; }
@@ -72,11 +74,14 @@ namespace DepAnalysis
 
     }
 
+    ///////////////////////////////////////////////////////////////////
+    // Type Table
     public class TypeTable
     {
         Dictionary<TypeName, List<TypeElement>> typeTable =
             new Dictionary<TypeName, List<TypeElement>>();
 
+        //--------------< does the element exist in Dict's value >-----------------
         public bool isExistInValue(string typename, TypeElement elem)
         {
             foreach (var v in typeTable[typename])
@@ -85,6 +90,7 @@ namespace DepAnalysis
             return false;
         }
 
+        //--------------< add an element into the dictionary >-----------------
         public void add(TypeName typename, TypeElement elem)
         {
             if (typeTable.ContainsKey(typename))
@@ -100,6 +106,7 @@ namespace DepAnalysis
             }
         }
 
+        //--------------< if a typename exists in the typetable >-----------------
         public bool containType(TypeName typename)
         {
             return typeTable.ContainsKey(typename);
@@ -116,6 +123,7 @@ namespace DepAnalysis
             }
         }
 
+        //--------------< output typetable >--------------------------------------
         public void show()
         {
             foreach (var elem in typeTable)
@@ -134,6 +142,7 @@ namespace DepAnalysis
             Console.Write("\n");
         }
 
+        //--------------< find typename in typetable >----------------------------
         public TypeElement findType(TypeName typeName, List<List<string>> nspaceCandidates)
         {
             if (containType(typeName))

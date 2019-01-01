@@ -67,17 +67,17 @@
       <Project>{7f6aee33-e7e5-4b83-b505-8be313defeb2}</Project>
       <Name>Display</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SemiExp\SemiExp.csproj">
-      <Project>{8cd2f63b-9294-43bb-9f60-4fa966ebc48c}</Project>
-      <Name>SemiExp</Name>
+    <ProjectReference Include="..\LexicalScanner\LexicalScanner.csproj">
+      <Project>{347d330a-65b4-4441-9ab2-2d14fa1de88e}</Project>
+      <Name>LexicalScanner</Name>
     </ProjectReference>
     <ProjectReference Include="..\Repository\Repository.csproj">
       <Project>{8DDF118E-6886-4C90-B92E-C8486D4F7F46}</Project>
       <Name>Repository</Name>
     </ProjectReference>
-    <ProjectReference Include="..\StrongComponentAlys\StrongComponentAlys.csproj">
+    <ProjectReference Include="..\StrongComponentAlys\StrongComp.csproj">
       <Project>{D88AE52D-5CB0-4E93-B7D5-EBF7070BFDC8}</Project>
-      <Name>StrongComponentAlys</Name>
+      <Name>StrongComp</Name>
     </ProjectReference>
     <ProjectReference Include="..\TypeAnalysis\TypeAnalysis.csproj">
       <Project>{AEAB7623-6F4A-47BF-985B-50BEF3F18328}</Project>
@@ -104,10 +104,6 @@
       <Name>FileMgr</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Test\" />
-    <Folder Include="SpecialTestCases\" />
-    <Folder Include="Test\SubFolder\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

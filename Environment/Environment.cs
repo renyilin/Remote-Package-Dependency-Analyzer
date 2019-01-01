@@ -4,9 +4,17 @@
 // Jim Fawcett, CSE681 - Software Modeling and Analysis, Fall 2017       //
 ///////////////////////////////////////////////////////////////////////////
 /*
+ * Package Operations:
+ * ----------------------
+ * This package defines environment properties for Client and Server.
+ * 
+ * Required Files:
+ * ---------------
+ * Environment.cs
+ * 
  * Maintenance History:
  * --------------------
- * ver 1.0 : 23 Oct 2017
+ * ver 1.0 : 3 Dec 2018
  * - first release
  */
 using System;
@@ -18,7 +26,9 @@ using System.Threading.Tasks;
 
 namespace MessagePassingComm
 {
-  public struct Environment
+    ///////////////////////////////////////////////////////////////////
+    // Environment properties
+    public struct Environment
   {
     public static string root { get; set; }
     public const long blockSize = 1024;
@@ -28,7 +38,9 @@ namespace MessagePassingComm
     public static bool verbose { get; set; }
   }
 
-  public struct ClientEnvironment
+    ///////////////////////////////////////////////////////////////////
+    // Client Environment properties
+    public struct ClientEnvironment
   {
     public static string root { get; set; } = "..\\..\\..\\ClientFiles\\";
     public const long blockSize = 1024;
@@ -38,7 +50,9 @@ namespace MessagePassingComm
     public static bool verbose { get; set; } = false;
   }
 
-  public struct ServerEnvironment
+    ///////////////////////////////////////////////////////////////////
+    // Server Environment properties
+    public struct ServerEnvironment
   {
     public static string root { get; set; } = "..\\..\\..\\ServerFiles\\";
     public const long blockSize = 1024;
@@ -48,5 +62,5 @@ namespace MessagePassingComm
     public static bool verbose { get; set; } = false;
     public static string DepAnalyzerPath { get; set; } = "..\\..\\..\\Executive\\bin\\Debug\\Executive.exe";
     public static string resultFilePath { get; set; } = ".\\result.txt";
-    }
+   }
 }

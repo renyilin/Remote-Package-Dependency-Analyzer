@@ -1,22 +1,28 @@
-﻿////////////////////////////////////////////////////////////////////////////
-// NavigatorServer.cs - File Server for WPF NavigatorClient Application   //
-// ver 2.0                                                                //
-// Jim Fawcett, CSE681 - Software Modeling and Analysis, Fall 2017        //
-////////////////////////////////////////////////////////////////////////////
+﻿/////////////////////////////////////////////////////////////////////
+// DepAlyzServer.cs - Server for the remote type-based dependency  //
+//                    analysis                                     //
+//                                                                 //
+// ver 1.0                                                         //
+// Yilin Ren, CSE681, Fall 2018                                    //
+/////////////////////////////////////////////////////////////////////
 /*
- * Package Operations:
- * -------------------
- * This package defines a single NavigatorServer class that returns file
- * and directory information about its rootDirectory subtree.  It uses
- * a message dispatcher that handles processing of all incoming and outgoing
- * messages.
+ * This package provides:
+ * ----------------------
+ * This package is the server for the remote type-based dependency analysis. 
+ * It has a communication modul that can send and receive message. The main
+ * responsibilities for server are replying messages for remote navigation,
+ * starting process of dependency analyzer and replying analysis results.
  * 
- * Maintanence History:
+ * Required Files:
+ * ---------------
+ * DepAlyzServer.cs
+ * Environment.cs
+ * IMessagePassingCommService.cs
+ * MessagePassingCommService.cs
+ * 
+ * Maintenance History:
  * --------------------
- * ver 2.0 - 24 Oct 2017
- * - added message dispatcher which works very well - see below
- * - added these comments
- * ver 1.0 - 22 Oct 2017
+ * ver 1.0 : 3 Dec 2018
  * - first release
  */
 
@@ -31,6 +37,8 @@ using System.Diagnostics;
 
 namespace DepAlyzServer
 {
+    ///////////////////////////////////////////////////////////////////
+    // Dependency Analyzer Server
     public class DependencyAlyzServer
     {
         IFileMgr localFileMgr { get; set; } = null;
@@ -44,7 +52,7 @@ namespace DepAlyzServer
         public DependencyAlyzServer()
         {
             initializeEnvironment();
-            Console.Title = "Navigator Server";
+            Console.Title = "Server";
             localFileMgr = FileMgrFactory.create(FileMgrType.Local);
         }
         /*----< set Environment properties needed by server >----------*/
@@ -60,30 +68,6 @@ namespace DepAlyzServer
 
         void initializeDispatcher()
         {
-            //Func<CommMessage, CommMessage> getTopFiles = (CommMessage msg) =>
-            //{
-            //    localFileMgr.currentPath = "";
-            //    CommMessage reply = new CommMessage(CommMessage.MessageType.reply);
-            //    reply.to = msg.from;
-            //    reply.from = msg.to;
-            //    reply.command = "getTopFiles";
-            //    reply.arguments = localFileMgr.getFiles().ToList<string>();
-            //    return reply;
-            //};
-            //messageDispatcher["getTopFiles"] = getTopFiles;
-
-            //Func<CommMessage, CommMessage> getTopDirs = (CommMessage msg) =>
-            //{
-            //    localFileMgr.currentPath = "";
-            //    CommMessage reply = new CommMessage(CommMessage.MessageType.reply);
-            //    reply.to = msg.from;
-            //    reply.from = msg.to;
-            //    reply.command = "getTopDirs";
-            //    reply.arguments = localFileMgr.getDirs().ToList<string>();
-            //    return reply;
-            //};
-            //messageDispatcher["getTopDirs"] = getTopDirs;
-
             Func<CommMessage, CommMessage> moveIntoFolderFiles = (CommMessage msg) =>
             {
                 if (msg.arguments.Count() == 1)
@@ -130,6 +114,7 @@ namespace DepAlyzServer
             messageDispatcher["depAnalysis"] = depAnalysis;
 
         }
+        /*----< create process for running dependency analyzer >------------*/
 
         CommMessage createProcess(string fileName, string commandline, CommMessage msg)
         {
@@ -162,26 +147,12 @@ namespace DepAlyzServer
             }
         }
 
+        /*----< read result file >-----------------------------------------------*/
         List<string> readResultFile()
         {
             string[] lines = System.IO.File.ReadAllLines(MessagePassingComm.ServerEnvironment.resultFilePath);
             return lines.ToList<string>();
         }
-
-        //void childExited(object sender, System.EventArgs e, CommMessage msg)
-        //{
-        //    Console.Write("\n  child process exited");
-
-        //    //CommMessage reply = new CommMessage(CommMessage.MessageType.reply);
-        //    //reply.to = msg.from;
-        //    //reply.from = msg.to;
-        //    //reply.command = "depAnalysis";
-        //    //reply.arguments = new List<string>{ "result"};
-
-        //    //reply.show();
-        //    //server.comm.postMessage(reply);
-        //}
-
 
         /*----< Server processing >------------------------------------*/
         /*
@@ -190,6 +161,7 @@ namespace DepAlyzServer
          */
         static void Main(string[] args)
         {
+            Console.ForegroundColor = ConsoleColor.Cyan;
             TestUtilities.title("Starting Navigation Server", '=');
             try
             {

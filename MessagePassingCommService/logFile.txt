@@ -1,0 +1,66 @@
+
+                                      CodeAnalysis - Version 1.8
+    ==============================================================================================
+     Mon Dec  3 18:18:07 2018
+     Path: "C:\Users\ryl\source\repos\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\MessagePassingCommService"
+     Args: MPCommService.cs, /v, /m, /r, /f, /p
+                                                                               
+           Code Metrics - Start Line, Size (lines/code), and Complexity (number of scopes)
+    ==============================================================================================
+
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+                             namespace                   Global Namespace       1       1      79
+
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+          MPCommService.cs   namespace                 MessagePassingComm      90     651      78
+          MPCommService.cs       class                           Receiver      95     127      21
+          MPCommService.cs    function                           Receiver     105       4       1
+          MPCommService.cs    function                              start     114      18       3
+          MPCommService.cs    function                     createCommHost     137       7       1
+          MPCommService.cs    function                        postMessage     147       5       1
+          MPCommService.cs    function                         getMessage     155      12       3
+          MPCommService.cs    function                               size     170       2       1
+          MPCommService.cs    function                              close     176       7       1
+          MPCommService.cs    function                   openFileForWrite     186      13       3
+          MPCommService.cs    function                     writeFileBlock     202      12       3
+          MPCommService.cs    function                          closeFile     217       3       1
+          MPCommService.cs       class                             Sender     225     176      26
+          MPCommService.cs    function                             Sender     240       8       1
+          MPCommService.cs    function                  createSendChannel     251       6       1
+          MPCommService.cs    function                            connect     260       4       1
+          MPCommService.cs    function                            connect     272      29       6
+          MPCommService.cs    function                              close     304      24       6
+          MPCommService.cs    function                         threadProc     334      25       5
+          MPCommService.cs    function                        postMessage     362       3       1
+          MPCommService.cs    function                           postFile     368      31       4
+          MPCommService.cs       class                               Comm     404      71      10
+          MPCommService.cs    function                               Comm     415       7       1
+          MPCommService.cs    function                              close     425       5       1
+          MPCommService.cs    function                            restart     433      10       2
+          MPCommService.cs    function                    closeConnection     446       3       1
+          MPCommService.cs    function                        postMessage     452       3       1
+          MPCommService.cs    function                         getMessage     458       3       1
+          MPCommService.cs    function                           postFile     464       3       1
+          MPCommService.cs    function                               size     470       3       1
+          MPCommService.cs       class                   TestPCommService     478     263      20
+          MPCommService.cs    function                  getClientFileList     482       9       2
+          MPCommService.cs    function                        compareMsgs     496      17       2
+          MPCommService.cs    function                   compareFileBytes     516      24       4
+          MPCommService.cs    function                       testSndrRcvr     543      44       1
+          MPCommService.cs    function                          testComm1     589      24       1
+          MPCommService.cs    function                          testComm2     615      40       4
+          MPCommService.cs    function                          testComm3     657      39       3
+          MPCommService.cs    function                           testComm     702      19       1
+          MPCommService.cs    function                               Main     724      15       1
+
+                          Functions Exceeding Metric Limits and Public Data
+    ==============================================================================================
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+
+
+
+    searched     7 dirs
+   processed     1 files

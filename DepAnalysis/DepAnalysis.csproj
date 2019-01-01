@@ -53,13 +53,13 @@
     <None Include="Test\PkgC.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LexicalScanner\LexicalScanner.csproj">
+      <Project>{347d330a-65b4-4441-9ab2-2d14fa1de88e}</Project>
+      <Name>LexicalScanner</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TypeAnalysis\TypeAnalysis.csproj">
       <Project>{AEAB7623-6F4A-47BF-985B-50BEF3F18328}</Project>
       <Name>TypeAnalysis</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SemiExp\SemiExp.csproj">
-      <Project>{8CD2F63B-9294-43BB-9F60-4FA966EBC48C}</Project>
-      <Name>SemiExp</Name>
     </ProjectReference>
     <ProjectReference Include="..\TypeTable\TypeTable.csproj">
       <Project>{1DBE18A3-2B85-4465-8C99-C6101FC9979A}</Project>
@@ -77,13 +77,11 @@
       <Project>{8DDF118E-6886-4C90-B92E-C8486D4F7F46}</Project>
       <Name>Repository</Name>
     </ProjectReference>
-    <ProjectReference Include="..\StrongComponentAlys\StrongComponentAlys.csproj">
+    <ProjectReference Include="..\StrongComponentAlys\StrongComp.csproj">
       <Project>{D88AE52D-5CB0-4E93-B7D5-EBF7070BFDC8}</Project>
-      <Name>StrongComponentAlys</Name>
+      <Name>StrongComp</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Test\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

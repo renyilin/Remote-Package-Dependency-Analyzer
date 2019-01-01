@@ -1,0 +1,49 @@
+/*
+ * This is a Test Demo for Lexical Scanner.
+ * -------------------
+ * Author: Yilin Ren  
+ * -------------------
+ * Required Files:
+ * ---------------
+ * Test.cs
+ * -------------------
+ * Maintenance History:
+ * -------------------
+ * ver 1.0 : 17 Sep 2018
+ * - first release
+ */
+
+using System;
+using System.Collections.Generic;
+using System.IO;
+
+namespace UserInterface
+{
+    using Token = StringBuilder;
+    using SemiExpCollection = List<String>;
+
+    static class ExtendMethods
+    {
+        public static string createSeparator(this string str, char ch)
+        {
+            StringBuilder seperator = new StringBuilder();
+            int n = str.IndexOf('\n');
+            if (n < 0) n = str.Length;
+            for (int i = 0; i < n + 2; i++ )
+            {
+                seperator.Append(ch);
+            }
+            return seperator.ToString();
+        }
+    }
+
+    class UserInterface
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("\n");
+            string str = " Demonstrate Lexical Scanner";
+            Console.WriteLine(str.createSeparator('+'));
+         }
+     }
+}

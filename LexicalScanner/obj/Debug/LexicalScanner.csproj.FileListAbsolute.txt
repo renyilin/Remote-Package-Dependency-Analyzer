@@ -1,0 +1,21 @@
+/Users/ryl/Documents/Course/CES681/MyHomework/Project2/LexicalScanner/LexicalScanner/bin/Debug/LexicalScanner.exe.config
+/Users/ryl/Documents/Course/CES681/MyHomework/Project2/LexicalScanner/LexicalScanner/bin/Debug/LexicalScanner.exe
+/Users/ryl/Documents/Course/CES681/MyHomework/Project2/LexicalScanner/LexicalScanner/bin/Debug/LexicalScanner.pdb
+/Users/ryl/Documents/Course/CES681/MyHomework/Project2/LexicalScanner/LexicalScanner/obj/Debug/LexicalScanner.csprojAssemblyReference.cache
+/Users/ryl/Documents/Course/CES681/MyHomework/Project2/LexicalScanner/LexicalScanner/obj/Debug/LexicalScanner.csproj.CoreCompileInputs.cache
+/Users/ryl/Documents/Course/CES681/MyHomework/Project2/LexicalScanner/LexicalScanner/obj/Debug/LexicalScanner.exe
+/Users/ryl/Documents/Course/CES681/MyHomework/Project2/LexicalScanner/LexicalScanner/obj/Debug/LexicalScanner.pdb
+Z:\Documents\Course\CES681\MyHomework\Project2\LexicalScanner\LexicalScanner\bin\Debug\LexicalScanner.exe.config
+Z:\Documents\Course\CES681\MyHomework\Project2\LexicalScanner\LexicalScanner\bin\Debug\LexicalScanner.exe
+Z:\Documents\Course\CES681\MyHomework\Project2\LexicalScanner\LexicalScanner\bin\Debug\LexicalScanner.pdb
+Z:\Documents\Course\CES681\MyHomework\Project2\LexicalScanner\LexicalScanner\obj\Debug\LexicalScanner.csproj.CoreCompileInputs.cache
+Z:\Documents\Course\CES681\MyHomework\Project2\LexicalScanner\LexicalScanner\obj\Debug\LexicalScanner.exe
+Z:\Documents\Course\CES681\MyHomework\Project2\LexicalScanner\LexicalScanner\obj\Debug\LexicalScanner.pdb
+Z:\Documents\Course\CES681\MyHomework\Project2\LexicalScanner\LexicalScanner\obj\Debug\LexicalScanner.csprojAssemblyReference.cache
+\\vmware-host\Shared Folders\Documents\Course\CES681_SMA\MyHomework\Project4\FinalVersion\RmtPkgDpdAnalyzer\LexicalScanner\obj\Debug\LexicalScanner.csproj.CoreCompileInputs.cache
+C:\Users\ryl\source\repos\Project4\FinalVersion\RmtPkgDpdAnalyzer\LexicalScanner\obj\Debug\LexicalScanner.csproj.CoreCompileInputs.cache
+C:\Users\ryl\source\repos\Project4\FinalVersion\RmtPkgDpdAnalyzer\LexicalScanner\bin\Debug\LexicalScanner.dll.config
+C:\Users\ryl\source\repos\Project4\FinalVersion\RmtPkgDpdAnalyzer\LexicalScanner\bin\Debug\LexicalScanner.dll
+C:\Users\ryl\source\repos\Project4\FinalVersion\RmtPkgDpdAnalyzer\LexicalScanner\bin\Debug\LexicalScanner.pdb
+C:\Users\ryl\source\repos\Project4\FinalVersion\RmtPkgDpdAnalyzer\LexicalScanner\obj\Debug\LexicalScanner.dll
+C:\Users\ryl\source\repos\Project4\FinalVersion\RmtPkgDpdAnalyzer\LexicalScanner\obj\Debug\LexicalScanner.pdb

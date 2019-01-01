@@ -4,16 +4,16 @@
 exe
 C#
 .cs
-\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\ClientGUI\obj\Debug\
+C:\Users\ryl\source\repos\Project4\FinalVersion\RmtPkgDpdAnalyzer\ClientGUI\obj\Debug\
 ClientGUI
 none
 false
 DEBUG;TRACE
-\\vmware-host\Shared Folders\Documents\Course\CES681\MyHomework\Project4\RmtPkgDpdAnalysis\RmtPkgDpdAnalyzer\RmtPkgDpdAnalyzer\ClientGUI\App.xaml
+C:\Users\ryl\source\repos\Project4\FinalVersion\RmtPkgDpdAnalyzer\ClientGUI\App.xaml
 11151548125
 
-7-44991946
-20-544285301
+7-1238911211
+20260367188
 MainWindow.xaml;
 
 False

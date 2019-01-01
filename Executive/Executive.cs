@@ -1,4 +1,31 @@
-﻿using System;
+﻿///////////////////////////////////////////////////////////////////////
+// Executive.cs - Demonstrate Prototype Code Analyzer                //
+// ver 1.0                                                           //
+// Application:  CSE681, Project #3, Fall 2018                       //
+// Author:      Yilin Ren                                            //
+///////////////////////////////////////////////////////////////////////
+/*
+ * Package Operations:
+ * -------------------
+ * This package defines the following class:
+ *   Executive:
+ *   - uses Parser, RulesAndActions, Semi, and Toker to perform basic
+ *     code metric analyzes
+ */
+/* Required Files:
+ *   Executive.cs
+ *   Parser.cs
+ *   IRulesAndActions.cs, RulesAndActions.cs, ScopeStack.cs, Elements.cs
+ *   ITokenCollection.cs, Semi.cs, Toker.cs
+ *   Display.cs
+ *   
+ * Maintenance History:
+ * --------------------
+ * ver 1.0 : 03 Dec 2018
+ * - first release
+ */
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -9,10 +36,15 @@ using Lexer;
 
 namespace DepAnalysis
 {
+
+    ///////////////////////////////////////////////////////////////////
+    // Execute Dependency Analyzer
+   
     class Executive
     {
         static string resultFilePath = ".\\result.txt";
 
+        //---------< Build Type Table >------------------------------------------------------
         public static void BuildTypeTable(string[] args, List<string> files, Repository repo)
         {
             BuildTypeAnalyzer builder = new BuildTypeAnalyzer(repo);
@@ -29,6 +61,7 @@ namespace DepAnalysis
                     Console.Write("\n  Can't open {0}\n\n", args[0]);
                     return;
                 }
+
 
                 try
                 {
@@ -51,6 +84,7 @@ namespace DepAnalysis
 
         }
 
+        //---------< Load files by processing command lines >-----------------------------------------
         public static List<string> ProcessCommandline(string[] args, bool optionFileRecursion)
         {
             List<string> files = new List<string>();
@@ -71,6 +105,8 @@ namespace DepAnalysis
             return files;
         }
 
+        //---------< Find files with/w.o recursion >-----------------------------------------
+
         public static List<string> findFiles(string searchpath, string pattern, bool optionFileRecursion)
         {
             List<string> fileList = Directory.GetFiles(searchpath, pattern).ToList();
@@ -86,6 +122,7 @@ namespace DepAnalysis
             return fileList;
         }
 
+        //---------< conduct dependency analysis >-----------------------------------------
         public static void depAnalysis(string[] args, List<string> files, Repository repo)
         {
             BuildTypeAnalyzer builder = new BuildTypeAnalyzer(repo);
@@ -124,34 +161,36 @@ namespace DepAnalysis
 
         }
 
+        //---------< output dependency >----------------------------------------------
         static public void showDependency(CsGraph<FileNode, string> DepGraph, StreamWriter streamWriter )
         {
-            Console.Write("\nDependency Analysis:");
+            //Console.Write("\nDependency Analysis:");
             streamWriter.Write("\r\nDependency Analysis: ");
 
             foreach (CsNode<FileNode, string> node in DepGraph.adjList)
             {
                 if (node.children.Count != 0)
                 {
-                    Console.Write("\n- {0} depends on:", node.nodeValue.fileName);
+                    //Console.Write("\n- {0} depends on:", node.nodeValue.fileName);
                     streamWriter.Write("\r\n- {0} depends on:", node.nodeValue.fileName);
                     foreach (var edge in node.children)
                     {
-                        Console.Write(" " + edge.edgeValue);
+                        //Console.Write(" " + edge.edgeValue);
                         streamWriter.Write(" " + edge.edgeValue);
                     }
                 }
                 else
                 {
-                    Console.Write("\n- {0} doesn't depend on any packages.", node.nodeValue.fileName);
+                    //Console.Write("\n- {0} doesn't depend on any packages.", node.nodeValue.fileName);
                     streamWriter.Write("\r\n- {0} doesn't depend on any packages.", node.nodeValue.fileName);
                 }
             }
         }
 
+        //---------< output strong components >-----------------------------------------
         static public void showStrongComponents(List<List<CsNode<FileNode, string>>> StrongComponents, StreamWriter streamWriter)
         {
-            Console.WriteLine("\nStrong Components:");
+            //Console.WriteLine("\nStrong Components:");
             streamWriter.WriteLine("\r\nStrong Components:");
 
             foreach (List<CsNode<FileNode, string>> scNodes in StrongComponents)
@@ -165,11 +204,12 @@ namespace DepAnalysis
                 }
                 stringBuilder.Append("]");
 
-                Console.WriteLine(stringBuilder);
+                //Console.WriteLine(stringBuilder);
                 streamWriter.WriteLine(stringBuilder);
             }
         }
 
+        //---------< Execute dependency analysis >-----------------------------------------
         static void Main(string[] args)
         {
 
@@ -179,22 +219,16 @@ namespace DepAnalysis
 
             using (StreamWriter streamWriter = new StreamWriter(resultFilePath))
             {
-                Console.WriteLine("Processing path: {0}", args[0]);
                 streamWriter.WriteLine("Processing path: {0}", args[0]);
 
                 List<string> files = ProcessCommandline(args, optionFileRecursion);
                 Repository repo = new Repository();
                 repo.semi = Factory.create();
                 BuildTypeTable(args, files, repo);
-                //Display.showTypeTable(repo.typeTable);
-                //Console.WriteLine();
-                //Display.showAliasTable(repo.aliasTable);
-                //Console.WriteLine();
                 depAnalysis(args, files, repo);
                 if (optionDA)
                 {
                     showDependency(repo.depGraph, streamWriter);
-                    Console.Write("\r\n");
                     streamWriter.WriteLine("");
                 }
 

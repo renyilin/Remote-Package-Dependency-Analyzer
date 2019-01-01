@@ -1,21 +1,51 @@
-﻿using System;
+﻿/////////////////////////////////////////////////////////////////////
+// ReqsTests.cs - an automated unit test that demonstrates         //
+//                requirements                                     //
+// ver 1.0                                                         //
+// Yilin Ren, CSE681, Fall 2018                                    //
+/////////////////////////////////////////////////////////////////////
+/*
+ * Package Operations:
+ * ----------------------
+ * This package provides an automated unit test suite that demonstrates all 
+ * of the functional requirements.
+ * 
+ * Required Files:
+ * ---------------
+ * - TestHarness.cs
+ * - MainWindow.xaml.cs
+ * 
+ * Maintenance History:
+ * --------------------
+ * ver 1.0 : 3 Dec 2018
+ * - first release
+ */
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using Lexer;
 
 namespace DepAnalysis
 {
+    ///////////////////////////////////////////////////////////////////
+    // utilities for display
     class ReqDisplay
     {
+        //--------------------< display title >----------------------------------
         public static void title(string tle)
         {
             Console.Write("\n  {0}", tle);
             Console.Write("\n {0}", new string('-', tle.Length + 2));
         }
+
+        //--------------------< display message >--------------------------------
         public static void message(string msg)
         {
             Console.Write("\n  {0}\n", msg);
         }
+
+        //--------------------< display set >-------------------------------------
         public static void showSet(HashSet<string> set, string msg = "")
         {
             if (msg.Length > 0)
@@ -29,6 +59,7 @@ namespace DepAnalysis
             Console.Write("\n");
         }
 
+        //--------------------< display list >------------------------------------
         public static void showList(List<string> lst, string msg = "")
         {
             if (msg.Length > 0)
@@ -49,6 +80,8 @@ namespace DepAnalysis
         }
     }
 
+    ///////////////////////////////////////////////////////////////////
+    // a test that demonstrates requirment 3 
     class ReqTest3 : ITest
     {
         public string name { get; set; } = "Req3";
@@ -75,7 +108,7 @@ namespace DepAnalysis
             nav.Add("*.cs");
             //nav.newDir += new FileUtilities.Navigate.newDirHandler(onDir);
             nav.newFile += new FileUtilities.Navigate.newFileHandler(onFile);
-            List<string> listDirectory = new List<string>{ "Toker", "SemiExp",
+            List<string> listDirectory = new List<string>{ "LexicalScanner",
             "TypeTable", "TypeAnalysis", "DepAnalysis","StrongComponentAlys", "Display",
             "Repository", "DemoExecutive", "Graph", "FileMgr", "TestHarness" };
             foreach (string directory in listDirectory)
@@ -89,6 +122,8 @@ namespace DepAnalysis
         }
     }
 
+    ///////////////////////////////////////////////////////////////////
+    // a test that demonstrates requirment 4
     class ReqTest4 : ITest
     {
         public string name { get; set; } = "Req4";
@@ -117,6 +152,8 @@ namespace DepAnalysis
         }
     }
 
+    ///////////////////////////////////////////////////////////////////
+    // a test that demonstrates requirment 5
     class ReqTest5 : ITest
     {
         public string name { get; set; } = "Req5";
@@ -147,6 +184,8 @@ namespace DepAnalysis
         }
     }
 
+    ///////////////////////////////////////////////////////////////////
+    // a test that demonstrates requirment 6 
     class ReqTest6 : ITest
     {
         public string name { get; set; } = "Req6";
@@ -182,6 +221,8 @@ namespace DepAnalysis
         }
     }
 
+    ///////////////////////////////////////////////////////////////////
+    // a test that demonstrates requirment 7
     class ReqTest7 : ITest
     {
         public string name { get; set; } = "Req7";
@@ -196,6 +237,8 @@ namespace DepAnalysis
         }
     }
 
+    ///////////////////////////////////////////////////////////////////
+    // a test that demonstrates requirment 8
     class ReqTest8 : ITest
     {
         public string name { get; set; } = "Req8";
